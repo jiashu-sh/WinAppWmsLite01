@@ -364,13 +364,26 @@ where i.void=0";
             string sTemp = "";
             if (sItemDesc.Length > LINE_CHARS)
                 sTemp = sItemDesc.Substring(0, LINE_CHARS);
-            string sTemp2 = "";            
             g.DrawString(sTemp, ArialFontDesc, brushDefaultFont, pointItemDesc); //条码文字
             if (sItemDesc.Length > LINE_CHARS)
             {
-                sTemp2 = sItemDesc.Substring(LINE_CHARS, (sItemDesc.Length - LINE_CHARS));
-                pointItemDesc.Y = pointItemDesc.Y + 12;
-                g.DrawString(sTemp2, ArialFontDesc, brushDefaultFont, pointItemDesc); //条码文字
+                string sTemp2 = sItemDesc.Substring(LINE_CHARS, (sItemDesc.Length - LINE_CHARS));
+
+                if (sItemDesc.Length > LINE_CHARS * 2)
+                {
+                    string sTemp3 = sTemp2.Substring(LINE_CHARS, (sTemp2.Length - LINE_CHARS));
+                    sTemp2 = sTemp2.Substring(0, LINE_CHARS);
+                    pointItemDesc.Y = pointItemDesc.Y + 12;
+                    g.DrawString(sTemp2, ArialFontDesc, brushDefaultFont, pointItemDesc); //条码文字
+                    pointItemDesc.Y = pointItemDesc.Y + 12 ;
+                    g.DrawString(sTemp3, ArialFontDesc, brushDefaultFont, pointItemDesc); //条码文字
+                }
+                else
+                {
+                    pointItemDesc.Y = pointItemDesc.Y + 12;
+                    g.DrawString(sTemp2, ArialFontDesc, brushDefaultFont, pointItemDesc); //条码文字
+                }
+                
             }
 
             //datamatrix二维码
