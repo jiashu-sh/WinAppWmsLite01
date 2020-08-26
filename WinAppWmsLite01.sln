@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinAppWmsLite01", "WinAppWcsClient01\WinAppWmsLite01.csproj", "{2C855A63-94A8-409F-B64D-E041EE7D0FE3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C855A63-94A8-409F-B64D-E041EE7D0FE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C855A63-94A8-409F-B64D-E041EE7D0FE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C855A63-94A8-409F-B64D-E041EE7D0FE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C855A63-94A8-409F-B64D-E041EE7D0FE3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {438FD377-8A20-41DD-8080-3558BEA95834}
+	EndGlobalSection
+EndGlobal
