@@ -1,4 +1,5 @@
-﻿using HamsterModel.AttributeModel;
+﻿using HamsterModel;
+using HamsterModel.AttributeModel;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,7 +10,7 @@ namespace HamsterCode
     {
         private HelloWordCore()
         {
-            sqlLiteConnectionStr = new MySqlHelper(ConnectionConfig.ConnectionConfigModel.MySqlConfig.ConnectionStr);
+            sqlLiteConnectionStr = ConnectionConfig.ConnectionConfigModel.SqlLiteConfig.ConnectionStr;
         }
         private string sqlLiteConnectionStr;
 
@@ -26,7 +27,7 @@ namespace HamsterCode
         [InterfaceSyncAttribute(MsgType = "HelloWordVoid")]
         public string HelloWordVoid(string logistics_interface)
         {
-            var result = logistics_interface;
+            var result = logistics_interface + "||" + sqlLiteConnectionStr;
             return result;
         }
     }
