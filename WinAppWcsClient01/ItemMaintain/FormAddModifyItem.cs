@@ -18,26 +18,33 @@ namespace WinAppWmsLite.ItemMaintain
         private static EntityItem CurrentItem;
         private static bool bIsModifyItem = false;
         private static int iLoadCustomerId = -1;
+        private static string sLoadItemBarcode = "";
+        private static bool bIsFromReceiving = false;
 
         PrintDocument printdoc = new PrintDocument();
-        
+
         public FormAddModifyItem()
         {
             InitializeComponent();
-
-            CurrentItem = new EntityItem();
         }
 
         public FormAddModifyItem(int iProductNo)
         {
             InitializeComponent();
 
-            CurrentItem = new EntityItem();
-
             if (iProductNo == -1)
                 return;
 
             InitLoadItem(iProductNo);
+        }
+
+        public FormAddModifyItem(string sItemBarcode, int iCustomerId)
+        {
+            sLoadItemBarcode = sItemBarcode;
+            iLoadCustomerId = iCustomerId;
+            bIsFromReceiving = true;
+
+            InitializeComponent();
         }
 
         private void InitLoadItem(int iProductNo)
@@ -71,6 +78,8 @@ where i.void=0";
 
         private void FormAddModifyItem_Load(object sender, EventArgs e)
         {
+            CurrentItem = new EntityItem();
+
             cbCustomeId.DisplayMember = "customer_desc";
             cbCustomeId.ValueMember = "customer_id";
             if (FormMain.DS_BC_CUSTOMER != null)
@@ -104,6 +113,17 @@ where i.void=0";
                 int iProductNo = Common.CommonUtil.GenProductNo("im_item.product_no");
                 if (iProductNo != -1)
                     tbProductNo.Text = iProductNo.ToString();
+            }
+
+            if (sLoadItemBarcode.Trim() != "")
+            {
+                tbItemBarcode.Text = sLoadItemBarcode;
+
+                Entities.EntityItem entityItem = Common.CommonUtil.GetItem(sLoadItemBarcode.Trim(), int.Parse(cbCustomeId.SelectedValue.ToString()));
+                if ((entityItem != null) && (entityItem.ProductNo != -1))
+                {
+                    MessageBox.Show("商品已经存在.");
+                }
             }
 
             //20140924 获取打印机列表
@@ -432,6 +452,8 @@ where i.void=0";
             CurrentItem.CustomerId = int.Parse(cbCustomeId.SelectedValue.ToString());
             CurrentItem.ProductNo = int.Parse(tbProductNo.Text);
             CurrentItem.ItemNo = tbItemNo.Text.Trim().ToUpper();
+            if (CurrentItem.ItemNo == "")
+                CurrentItem.ItemNo = tbItemBarcode.Text.Trim().ToUpper();
             CurrentItem.ItemDesc = tbItemDesc.Text.Trim();
             CurrentItem.UserId = FormMain.USER_ID;
             EntityItemBarcode ItemBarcode = new EntityItemBarcode();
@@ -444,7 +466,11 @@ where i.void=0";
             CurrentItem.ItemBarcodes = ListItemBarcodes;
 
             if (DaItemMaintain.InsertUpdateItem(CurrentItem))
+            {
                 MessageBox.Show("保存成功");
+                if (bIsFromReceiving)
+                    this.DialogResult = DialogResult.OK;
+            }
             else
                 MessageBox.Show("保存失败");
         }

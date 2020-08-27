@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitterBottom = new System.Windows.Forms.Splitter();
             this.tbQty = new System.Windows.Forms.TextBox();
             this.pnlBottom = new System.Windows.Forms.Panel();
@@ -75,6 +75,8 @@
             this.colItemDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colContainerId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnClearInput = new System.Windows.Forms.Button();
+            this.btnCreateNewItem = new System.Windows.Forms.Button();
             this.pnlBottom.SuspendLayout();
             this.pnlStatus.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -99,7 +101,7 @@
             // tbQty
             // 
             this.tbQty.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
-            this.tbQty.Location = new System.Drawing.Point(387, 56);
+            this.tbQty.Location = new System.Drawing.Point(387, 55);
             this.tbQty.MaxLength = 10;
             this.tbQty.Name = "tbQty";
             this.tbQty.Size = new System.Drawing.Size(50, 23);
@@ -151,6 +153,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnClearInput);
             this.panel1.Controls.Add(this.btnInsertReceivingItem);
             this.panel1.Controls.Add(this.btnSaveCommit);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -166,7 +169,7 @@
             this.btnInsertReceivingItem.Name = "btnInsertReceivingItem";
             this.btnInsertReceivingItem.Size = new System.Drawing.Size(180, 35);
             this.btnInsertReceivingItem.TabIndex = 12;
-            this.btnInsertReceivingItem.Text = "增加收货";
+            this.btnInsertReceivingItem.Text = "增加 (继续收货...)";
             this.btnInsertReceivingItem.UseVisualStyleBackColor = true;
             this.btnInsertReceivingItem.Click += new System.EventHandler(this.btnInsertReceivingItem_Click);
             // 
@@ -179,6 +182,7 @@
             this.btnSaveCommit.TabIndex = 11;
             this.btnSaveCommit.Text = "提交保存";
             this.btnSaveCommit.UseVisualStyleBackColor = true;
+            this.btnSaveCommit.Click += new System.EventHandler(this.btnSaveCommit_Click);
             // 
             // splitterTop
             // 
@@ -194,9 +198,9 @@
             // 
             this.lbItemDesc.Font = new System.Drawing.Font("微软雅黑", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lbItemDesc.ForeColor = System.Drawing.Color.Green;
-            this.lbItemDesc.Location = new System.Drawing.Point(545, 55);
+            this.lbItemDesc.Location = new System.Drawing.Point(147, 82);
             this.lbItemDesc.Name = "lbItemDesc";
-            this.lbItemDesc.Size = new System.Drawing.Size(213, 70);
+            this.lbItemDesc.Size = new System.Drawing.Size(380, 19);
             this.lbItemDesc.TabIndex = 0;
             this.lbItemDesc.Text = "产品描述";
             // 
@@ -245,6 +249,7 @@
             // pnlMain
             // 
             this.pnlMain.BackColor = System.Drawing.Color.White;
+            this.pnlMain.Controls.Add(this.btnCreateNewItem);
             this.pnlMain.Controls.Add(this.cbInputSnLot);
             this.pnlMain.Controls.Add(this.pnlLotSn);
             this.pnlMain.Controls.Add(this.tbPoNo);
@@ -273,7 +278,7 @@
             this.pnlLotSn.Controls.Add(this.rbSn);
             this.pnlLotSn.Controls.Add(this.rbLot);
             this.pnlLotSn.Controls.Add(this.tbLotSn);
-            this.pnlLotSn.Location = new System.Drawing.Point(147, 85);
+            this.pnlLotSn.Location = new System.Drawing.Point(147, 104);
             this.pnlLotSn.Name = "pnlLotSn";
             this.pnlLotSn.Size = new System.Drawing.Size(315, 40);
             this.pnlLotSn.TabIndex = 1;
@@ -328,7 +333,7 @@
             // 
             // tbProductNo
             // 
-            this.tbProductNo.Location = new System.Drawing.Point(273, 56);
+            this.tbProductNo.Location = new System.Drawing.Point(273, 55);
             this.tbProductNo.Name = "tbProductNo";
             this.tbProductNo.ReadOnly = true;
             this.tbProductNo.Size = new System.Drawing.Size(90, 23);
@@ -337,7 +342,7 @@
             // lbContainerNo
             // 
             this.lbContainerNo.AutoSize = true;
-            this.lbContainerNo.Location = new System.Drawing.Point(93, 147);
+            this.lbContainerNo.Location = new System.Drawing.Point(93, 155);
             this.lbContainerNo.Name = "lbContainerNo";
             this.lbContainerNo.Size = new System.Drawing.Size(44, 17);
             this.lbContainerNo.TabIndex = 100;
@@ -346,7 +351,7 @@
             // lbQty
             // 
             this.lbQty.AutoSize = true;
-            this.lbQty.Location = new System.Drawing.Point(369, 59);
+            this.lbQty.Location = new System.Drawing.Point(369, 58);
             this.lbQty.Name = "lbQty";
             this.lbQty.Size = new System.Drawing.Size(14, 17);
             this.lbQty.TabIndex = 15;
@@ -355,7 +360,7 @@
             // lbUom
             // 
             this.lbUom.AutoSize = true;
-            this.lbUom.Location = new System.Drawing.Point(445, 59);
+            this.lbUom.Location = new System.Drawing.Point(445, 58);
             this.lbUom.Name = "lbUom";
             this.lbUom.Size = new System.Drawing.Size(32, 17);
             this.lbUom.TabIndex = 15;
@@ -364,7 +369,7 @@
             // tbBarcode
             // 
             this.tbBarcode.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
-            this.tbBarcode.Location = new System.Drawing.Point(150, 56);
+            this.tbBarcode.Location = new System.Drawing.Point(150, 55);
             this.tbBarcode.MaxLength = 20;
             this.tbBarcode.Name = "tbBarcode";
             this.tbBarcode.Size = new System.Drawing.Size(120, 23);
@@ -374,7 +379,7 @@
             // lbItemNoBarcode
             // 
             this.lbItemNoBarcode.AutoSize = true;
-            this.lbItemNoBarcode.Location = new System.Drawing.Point(29, 59);
+            this.lbItemNoBarcode.Location = new System.Drawing.Point(29, 58);
             this.lbItemNoBarcode.Name = "lbItemNoBarcode";
             this.lbItemNoBarcode.Size = new System.Drawing.Size(108, 17);
             this.lbItemNoBarcode.TabIndex = 0;
@@ -427,9 +432,9 @@
             // col_item_desc
             // 
             this.col_item_desc.DataPropertyName = "item_desc";
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("宋体", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.col_item_desc.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.col_item_desc.DefaultCellStyle = dataGridViewCellStyle4;
             this.col_item_desc.HeaderText = "产品描述";
             this.col_item_desc.Name = "col_item_desc";
             this.col_item_desc.ReadOnly = true;
@@ -466,7 +471,7 @@
             // cbUomId
             // 
             this.cbUomId.FormattingEnabled = true;
-            this.cbUomId.Location = new System.Drawing.Point(481, 55);
+            this.cbUomId.Location = new System.Drawing.Point(481, 54);
             this.cbUomId.Name = "cbUomId";
             this.cbUomId.Size = new System.Drawing.Size(46, 25);
             this.cbUomId.TabIndex = 16;
@@ -475,7 +480,7 @@
             // 
             this.tbContainerNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.tbContainerNo.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
-            this.tbContainerNo.Location = new System.Drawing.Point(150, 144);
+            this.tbContainerNo.Location = new System.Drawing.Point(150, 152);
             this.tbContainerNo.MaxLength = 20;
             this.tbContainerNo.Name = "tbContainerNo";
             this.tbContainerNo.Size = new System.Drawing.Size(120, 23);
@@ -484,7 +489,7 @@
             // cbInputSnLot
             // 
             this.cbInputSnLot.AutoSize = true;
-            this.cbInputSnLot.Location = new System.Drawing.Point(32, 93);
+            this.cbInputSnLot.Location = new System.Drawing.Point(32, 112);
             this.cbInputSnLot.Name = "cbInputSnLot";
             this.cbInputSnLot.Size = new System.Drawing.Size(94, 21);
             this.cbInputSnLot.TabIndex = 2;
@@ -539,6 +544,27 @@
             this.colContainerId.DataPropertyName = "ContainerId";
             this.colContainerId.HeaderText = "容器";
             this.colContainerId.Name = "colContainerId";
+            // 
+            // btnClearInput
+            // 
+            this.btnClearInput.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnClearInput.Location = new System.Drawing.Point(424, 0);
+            this.btnClearInput.Name = "btnClearInput";
+            this.btnClearInput.Size = new System.Drawing.Size(180, 35);
+            this.btnClearInput.TabIndex = 13;
+            this.btnClearInput.Text = "清空";
+            this.btnClearInput.UseVisualStyleBackColor = true;
+            this.btnClearInput.Click += new System.EventHandler(this.btnClearInput_Click);
+            // 
+            // btnCreateNewItem
+            // 
+            this.btnCreateNewItem.Location = new System.Drawing.Point(533, 50);
+            this.btnCreateNewItem.Name = "btnCreateNewItem";
+            this.btnCreateNewItem.Size = new System.Drawing.Size(94, 32);
+            this.btnCreateNewItem.TabIndex = 102;
+            this.btnCreateNewItem.Text = "创建新商品";
+            this.btnCreateNewItem.UseVisualStyleBackColor = true;
+            this.btnCreateNewItem.Click += new System.EventHandler(this.btnCreateNewItem_Click);
             // 
             // FormOpReceiving
             // 
@@ -622,5 +648,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colItemDesc;
         private System.Windows.Forms.DataGridViewTextBoxColumn colQty;
         private System.Windows.Forms.DataGridViewTextBoxColumn colContainerId;
+        private System.Windows.Forms.Button btnClearInput;
+        private System.Windows.Forms.Button btnCreateNewItem;
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinAppWmsLite.ItemMaintain;
 
 namespace WinAppWmsLite.WhOperate
 {
@@ -64,17 +65,21 @@ namespace WinAppWmsLite.WhOperate
                     cbUomId.SelectedIndex = 0;
             }
 
+            InitOrderEntity();
             //if (!bIsModifyItem) //新增时获取新id
-            {
-                int iOrderNo = Common.CommonUtil.GenOrderNo("wh_order_head.order_id",1);
-                if (iOrderNo != -1)
-                    tbPoNo.Text = iOrderNo.ToString();
+        }
 
-                RcvOrder = new Entities.EntityOrder();
-                RcvOrder.OrderId = iOrderNo;
-                RcvOrder.OrderNo = iOrderNo.ToString();
+        private void InitOrderEntity()
+        {
+            int iOrderNo = Common.CommonUtil.GenOrderNo("wh_order_head.order_id", 1);
+            if (iOrderNo != -1)
+                tbPoNo.Text = iOrderNo.ToString();
 
-            }
+            RcvOrder = new Entities.EntityOrder();
+            RcvOrder.OrderId = iOrderNo;
+            RcvOrder.OrderNo = iOrderNo.ToString();
+            RcvOrder.OrderTypeId = 1;
+            RcvOrder.UserId = FormMain.USER_ID;
 
             EntityIoLogsList = new List<Entities.EntityIoLogs>();
         }
@@ -133,6 +138,26 @@ namespace WinAppWmsLite.WhOperate
 
             EntityIoLogsList.Add(ioLogs);
 
+            RefreshIoLogsList();
+
+            RefreshInput();
+        }
+
+        private void RefreshInput()
+        {
+            tbBarcode.Text = "";
+            tbProductNo.Text = "";
+            tbLotSn.Text = "";
+            tbQty.Text = "";
+            cbInputSnLot.Checked = false;
+            lbItemDesc.ForeColor = Color.Green;
+
+            ScanItem = null;
+        }
+
+        private void RefreshIoLogsList()
+        {
+            gvListIoLogs.DataSource = null;
             gvListIoLogs.DataSource = EntityIoLogsList;
         }
 
@@ -152,7 +177,7 @@ namespace WinAppWmsLite.WhOperate
 
             Entities.EntityItem entityItem = Common.CommonUtil.GetItem(sBarcode,int.Parse(cbCustomeId.SelectedValue.ToString()));
 
-            if (entityItem != null)
+            if ((entityItem != null) && (entityItem.ProductNo != -1))
             {
                 tbProductNo.Text = entityItem.ProductNo.ToString();
                 lbItemDesc.Text = entityItem.ItemDesc;
@@ -178,6 +203,54 @@ namespace WinAppWmsLite.WhOperate
                     //今后再添加扫描同条码累计功能
                 }
             }
+            else
+            {
+                lbItemDesc.Text = "商品不存在(未维护基本信息).";
+                lbItemDesc.ForeColor = Color.Red;
+            }
+                //MessageBox.Show("商品不存在(未维护基本信息).");
+        }
+
+        private void btnClearInput_Click(object sender, EventArgs e)
+        {
+            RefreshInput();
+        }
+
+        private void btnCreateNewItem_Click(object sender, EventArgs e)
+        {
+            int iCustomerId = int.Parse(cbCustomeId.SelectedValue.ToString());
+            string sItemBarcode = tbBarcode.Text.Trim();
+            FormAddModifyItem formAddModifyItem = new FormAddModifyItem(sItemBarcode,iCustomerId);
+            DialogResult dlgResult = formAddModifyItem.ShowDialog(this);
+            if (dlgResult == DialogResult.OK)
+                GetItem();
+        }
+
+        private void btnSaveCommit_Click(object sender, EventArgs e)
+        {
+            ReceivingSaveCommit();
+        }
+
+        private void ReceivingSaveCommit()
+        {
+            if ((RcvOrder == null) || (RcvOrder.OrderId == -1))
+            {
+                MessageBox.Show("参数 RcvOrder 错误,无法继续.");
+                return;
+            }
+            if ((EntityIoLogsList == null) || (EntityIoLogsList.Count == 0))
+            {
+                MessageBox.Show("参数 EntityIoLogsList 错误,无法继续.");
+                return;
+            }
+
+            RcvOrder.CustomerId = int.Parse(cbCustomeId.SelectedValue.ToString());
+            RcvOrder.IoLogsList = EntityIoLogsList;
+
+            if (DaOpReceiving.ReceivingCommit(RcvOrder))
+                MessageBox.Show("保存完成.");
+            else
+                MessageBox.Show("保存失败.");
         }
     }
 }

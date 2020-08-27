@@ -37,7 +37,7 @@ namespace WinAppWmsLite.ItemMaintain
                     cmd.Parameters.AddWithValue("@product_no", paraItem.ProductNo);
                     iInsert += cmd.ExecuteNonQuery();
 
-                    string strSql = "insert into main.im_item (product_no,item_no,item_desc,customer_id,update_uid,update_time) values (@product_no,@item_no,@item_desc,@customer_id,@update_uid,datetime('now'))";
+                    string strSql = "insert into main.im_item (product_no,item_no,item_desc,customer_id,update_uid,update_time) values (@product_no,@item_no,@item_desc,@customer_id,@update_uid,datetime('now','localtime'))";
                     cmd = new SQLiteCommand(strSql, conn, transaction);
                     cmd.Parameters.AddWithValue("@product_no", paraItem.ProductNo);
                     cmd.Parameters.AddWithValue("@item_no", paraItem.ItemNo);
@@ -48,7 +48,7 @@ namespace WinAppWmsLite.ItemMaintain
 
                     foreach(EntityItemBarcode ibc in paraItem.ItemBarcodes)
                     {
-                        string strSql1 = "insert into main.im_item_barcode (product_no,item_barcode,customer_id,update_uid,update_time) values (@product_no,@item_barcode,@customer_id,@update_uid,datetime('now'))";
+                        string strSql1 = "insert into main.im_item_barcode (product_no,item_barcode,customer_id,update_uid,update_time) values (@product_no,@item_barcode,@customer_id,@update_uid,datetime('now','localtime'))";
                         cmd = new SQLiteCommand(strSql1, conn, transaction);
                         cmd.Parameters.AddWithValue("@product_no", ibc.ProductNo);
                         cmd.Parameters.AddWithValue("@item_barcode", ibc.ItemBarcode);

@@ -296,6 +296,26 @@ CREATE TABLE main.bc_common_code (
 
 insert into bc_common_code (code_type_id,code_id,code_desc,remark_desc,void) values (1,0,'件','计量单位',0)
 
+
+-- ----------------------------
+-- Table structure for wh_balance_stock
+-- ----------------------------
+DROP TABLE IF EXISTS main.wh_balance_stock;
+CREATE TABLE main.wh_balance_stock (
+  wh_balance_stock_id integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+  customer_id integer NOT NULL default 0,
+  log_date varchar(10) null ,
+  product_no integer NOT NULL,
+  qty integer NOT NULL default 0,
+  uom_id integer NOT NULL default 0,  
+  lot_no varchar(50) null ,
+  serial_no varchar(50) null , 
+  void integer default 0,
+  update_time timestamp,
+  update_uid integer default 0 
+)
+;
+
 -- ----------------------------
 -- Table structure for wh_order_head
 -- ----------------------------
@@ -333,3 +353,4 @@ CREATE TABLE main.wh_io_logs (
   update_uid integer default 0 
 )
 ;
+
