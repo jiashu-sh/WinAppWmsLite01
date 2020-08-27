@@ -6032,23 +6032,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\zhang\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\js\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\HamsterSoft\\WinAppWmsLite01\\HamsterWebApi\\HamsterWebApi.csproj",
+      "projectUniqueName": "C:\\GitCode\\c-sharp\\WinAppWmsLite01\\HamsterWebApi\\HamsterWebApi.csproj",
       "projectName": "HamsterWebApi",
-      "projectPath": "D:\\HamsterSoft\\WinAppWmsLite01\\HamsterWebApi\\HamsterWebApi.csproj",
-      "packagesPath": "C:\\Users\\zhang\\.nuget\\packages\\",
-      "outputPath": "D:\\HamsterSoft\\WinAppWmsLite01\\HamsterWebApi\\obj\\",
+      "projectPath": "C:\\GitCode\\c-sharp\\WinAppWmsLite01\\HamsterWebApi\\HamsterWebApi.csproj",
+      "packagesPath": "C:\\Users\\js\\.nuget\\packages\\",
+      "outputPath": "C:\\GitCode\\c-sharp\\WinAppWmsLite01\\HamsterWebApi\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\zhang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\js\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6061,11 +6057,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\HamsterSoft\\WinAppWmsLite01\\HamsterCode\\HamsterCode.csproj": {
-              "projectPath": "D:\\HamsterSoft\\WinAppWmsLite01\\HamsterCode\\HamsterCode.csproj"
+            "C:\\GitCode\\c-sharp\\WinAppWmsLite01\\HamsterCode\\HamsterCode.csproj": {
+              "projectPath": "C:\\GitCode\\c-sharp\\WinAppWmsLite01\\HamsterCode\\HamsterCode.csproj"
             },
-            "D:\\HamsterSoft\\WinAppWmsLite01\\HamsterModel\\HamsterModel.csproj": {
-              "projectPath": "D:\\HamsterSoft\\WinAppWmsLite01\\HamsterModel\\HamsterModel.csproj"
+            "C:\\GitCode\\c-sharp\\WinAppWmsLite01\\HamsterModel\\HamsterModel.csproj": {
+              "projectPath": "C:\\GitCode\\c-sharp\\WinAppWmsLite01\\HamsterModel\\HamsterModel.csproj"
             }
           }
         }
@@ -6102,7 +6098,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

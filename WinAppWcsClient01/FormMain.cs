@@ -116,5 +116,26 @@ namespace WinAppWmsLite
             //formItemMaintain.WindowState = FormWindowState.Maximized;
             formOpReceiving.Activate();
         }
+
+        private void tsmiWmStockQuery_Click(object sender, EventArgs e)
+        {
+            WhMgt.FormStockQuery formStockQuery = null;
+            foreach (Form ftemp in this.MdiChildren) //查找当前父表单所有子表单
+            {
+                if (ftemp is WhMgt.FormStockQuery)
+                {
+                    formStockQuery = (WhMgt.FormStockQuery)ftemp;
+                    break;
+                }
+            }
+            if (formStockQuery == null || formStockQuery.IsDisposed)
+            {
+                formStockQuery = new WhMgt.FormStockQuery();
+                formStockQuery.MdiParent = this;
+            }
+            formStockQuery.Show();
+            //formItemMaintain.WindowState = FormWindowState.Maximized;
+            formStockQuery.Activate();
+        }
     }
 }

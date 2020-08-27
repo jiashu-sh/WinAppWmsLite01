@@ -46,13 +46,7 @@ namespace WinAppWmsLite.WhOperate
                     cbCustomeId.DataSource = FormMain.DS_BC_CUSTOMER.Tables[0];
                 if (cbCustomeId.Items.Count > 0)
                     cbCustomeId.SelectedIndex = 0;
-                //try
-                //{
-                //    if (iLoadCustomerId != -1)
-                //        cbCustomeId.SelectedValue = iLoadCustomerId;
-                //}
-                //catch
-                //{ }
+
                 tbBarcode.Focus();
             }
 
