@@ -19,6 +19,11 @@ namespace HamsterWebApi.Controllers
         public BussinessCoreController(IOptions<ConnectionConfig> connectConfig) : base(connectConfig)
         { }
 
+        /// <summary>
+        /// 统一入口 (HelloWord 1)
+        /// </summary>
+        /// <param name="msgObj"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post([FromForm]BaseYiKuActiveMsg msgObj)
         {

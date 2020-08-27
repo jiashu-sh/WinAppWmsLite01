@@ -10,6 +10,7 @@ namespace HamsterCode
     {
         private HelloWordCore()
         {
+            //(HelloWord 3-1)拿配置文件
             sqlLiteConnectionStr = ConnectionConfig.ConnectionConfigModel.SqlLiteConfig.ConnectionStr;
         }
         private string sqlLiteConnectionStr;
@@ -24,6 +25,11 @@ namespace HamsterCode
             }
         }
 
+        /// <summary>
+        /// (HelloWord 3-2)后台方法 
+        /// </summary>
+        /// <param name="logistics_interface"></param>
+        /// <returns></returns>
         [InterfaceSyncAttribute(MsgType = "HelloWordVoid")]
         public string HelloWordVoid(string logistics_interface)
         {
