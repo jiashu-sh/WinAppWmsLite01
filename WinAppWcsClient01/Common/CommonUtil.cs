@@ -33,6 +33,71 @@ namespace WinAppWmsLite.Common
             return iSerialNo;
         }
 
+        internal static int GenOrderNo(string sIdType,int iIoType = 0)
+        {
+            int iProductNo = GenSystemNo(sIdType);
+            if (iProductNo == -1)
+                return -1;
+
+            int iIoPrefix = 1;
+            if (iIoType == 0)
+                iIoType = 9;
+
+            iProductNo = iIoType * 10000000 + iProductNo; //必须为偶数
+
+            return iProductNo;
+        }
+
+        /// <summary>
+        /// 获取Item对象
+        /// </summary>
+        /// <param name="sBarcode"></param>
+        /// <param name="iCustomerId"></param>
+        /// <returns></returns>
+        internal static Entities.EntityItem GetItem(string sBarcode,int iCustomerId)
+        {
+            Entities.EntityItem entityItem = new Entities.EntityItem();
+            //and i.customer_id = b.customer_id 
+            string sSql = @"SELECT i.product_no,i.item_no,b.item_barcode,i.item_desc,i.customer_id,c.customer_desc 
+FROM im_item i join im_item_barcode b on i.product_no = b.product_no 
+join bc_customer c on c.customer_id = i.customer_id
+where i.void=0 
+ ";
+            sSql += " and b.item_barcode = '"+ sBarcode + "' and b.customer_id = " + iCustomerId.ToString();
+            sSql += " order by i.product_no,b.item_barcode ";
+            DataSet dsItems = Common.CommonDa.ExecuteQuery(sSql);
+            if (dsItems != null)
+            {
+                if (dsItems.Tables[0].Rows.Count == 0)
+                    return null;
+                
+                try
+                {
+                    entityItem.CustomerId = iCustomerId;
+                    entityItem.ItemDesc = dsItems.Tables[0].Rows[0]["item_desc"].ToString().Trim();
+                    entityItem.ItemNo = dsItems.Tables[0].Rows[0]["item_no"].ToString().Trim();
+                    entityItem.ProductNo = int.Parse(dsItems.Tables[0].Rows[0]["product_no"].ToString().Trim());
+
+                    List<Entities.EntityItemBarcode> lstItemBarcodes = new List<Entities.EntityItemBarcode>();
+                    foreach(DataRow dr in dsItems.Tables[0].Rows)
+                    {
+                        Entities.EntityItemBarcode ib = new Entities.EntityItemBarcode();
+                        ib.CustomerId = iCustomerId;
+                        ib.ProductNo = entityItem.ProductNo;
+
+                        lstItemBarcodes.Add(ib);
+                    }
+                    entityItem.ItemBarcodes = lstItemBarcodes;
+
+                }
+                catch (Exception ex)
+                {
+                    throw (ex);
+                }
+            }
+            return entityItem;
+        }
+
         internal static int GenSystemNo(string sIdType)
         {
             int iProductNo = -1;

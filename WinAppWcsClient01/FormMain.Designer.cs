@@ -34,10 +34,12 @@
             this.tsmiSubExit = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMainLocationMgt = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiLocationMapSet = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiMainHelp = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiHelpAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMainItemMgt = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiItemMaintain = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiMainHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiHelpAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiMainOperate = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiOpReceiving = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +55,7 @@
             // 
             this.menuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiMainFile,
+            this.tsmiMainOperate,
             this.tsmiMainLocationMgt,
             this.tsmiMainItemMgt,
             this.tsmiMainHelp});
@@ -92,6 +95,21 @@
             this.tsmiLocationMapSet.Text = "库位平面图设置";
             this.tsmiLocationMapSet.Click += new System.EventHandler(this.tsmiLocationMapSet_Click);
             // 
+            // tsmiMainItemMgt
+            // 
+            this.tsmiMainItemMgt.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiItemMaintain});
+            this.tsmiMainItemMgt.Name = "tsmiMainItemMgt";
+            this.tsmiMainItemMgt.Size = new System.Drawing.Size(56, 21);
+            this.tsmiMainItemMgt.Text = "产品(&I)";
+            // 
+            // tsmiItemMaintain
+            // 
+            this.tsmiItemMaintain.Name = "tsmiItemMaintain";
+            this.tsmiItemMaintain.Size = new System.Drawing.Size(180, 22);
+            this.tsmiItemMaintain.Text = "产品管理";
+            this.tsmiItemMaintain.Click += new System.EventHandler(this.tsmiItemMaintain_Click);
+            // 
             // tsmiMainHelp
             // 
             this.tsmiMainHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -107,20 +125,20 @@
             this.tsmiHelpAbout.Text = "关于 (&A)";
             this.tsmiHelpAbout.Click += new System.EventHandler(this.tsmiHelpAbout_Click);
             // 
-            // tsmiMainItemMgt
+            // tsmiMainOperate
             // 
-            this.tsmiMainItemMgt.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiItemMaintain});
-            this.tsmiMainItemMgt.Name = "tsmiMainItemMgt";
-            this.tsmiMainItemMgt.Size = new System.Drawing.Size(56, 21);
-            this.tsmiMainItemMgt.Text = "产品(I)";
+            this.tsmiMainOperate.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiOpReceiving});
+            this.tsmiMainOperate.Name = "tsmiMainOperate";
+            this.tsmiMainOperate.Size = new System.Drawing.Size(62, 21);
+            this.tsmiMainOperate.Text = "操作(&O)";
             // 
-            // tsmiItemMaintain
+            // tsmiOpReceiving
             // 
-            this.tsmiItemMaintain.Name = "tsmiItemMaintain";
-            this.tsmiItemMaintain.Size = new System.Drawing.Size(180, 22);
-            this.tsmiItemMaintain.Text = "产品管理";
-            this.tsmiItemMaintain.Click += new System.EventHandler(this.tsmiItemMaintain_Click);
+            this.tsmiOpReceiving.Name = "tsmiOpReceiving";
+            this.tsmiOpReceiving.Size = new System.Drawing.Size(180, 22);
+            this.tsmiOpReceiving.Text = "入库(&R)";
+            this.tsmiOpReceiving.Click += new System.EventHandler(this.tsmiOpReceiving_Click);
             // 
             // FormMain
             // 
@@ -154,6 +172,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiLocationMapSet;
         private System.Windows.Forms.ToolStripMenuItem tsmiMainItemMgt;
         private System.Windows.Forms.ToolStripMenuItem tsmiItemMaintain;
+        private System.Windows.Forms.ToolStripMenuItem tsmiMainOperate;
+        private System.Windows.Forms.ToolStripMenuItem tsmiOpReceiving;
     }
 }
 

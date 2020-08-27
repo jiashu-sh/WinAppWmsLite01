@@ -7,8 +7,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{2C855A63-94A8-409F-B64D-E041EE7D0FE3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WinAppWcsClient01</RootNamespace>
-    <AssemblyName>WinAppWcsClient01</AssemblyName>
+    <RootNamespace>WinAppWmsLite</RootNamespace>
+    <AssemblyName>WinAppWmsLite01</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -101,12 +101,15 @@
     <Compile Include="Common\ConfigIO.cs" />
     <Compile Include="Common\Ean13.cs" />
     <Compile Include="Common\EnumDbTypes.cs" />
+    <Compile Include="Common\EnumIoTypes.cs" />
     <Compile Include="EntitiesRbt\EntityRbtUnit.cs" />
+    <Compile Include="Entities\EntityIoLogs.cs" />
     <Compile Include="Entities\EntityItem.cs" />
     <Compile Include="Entities\EntityItemBarcode.cs" />
     <Compile Include="Entities\EntityLocation.cs" />
     <Compile Include="Entities\EntityLocLane.cs" />
     <Compile Include="Entities\EntityLocShelf.cs" />
+    <Compile Include="Entities\EntityOrder.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +157,13 @@
     <Compile Include="RequestModel\MsgObj.cs" />
     <Compile Include="ResponseModel\EntityReturnError.cs" />
     <Compile Include="ResponseModel\ResponseResult.cs" />
+    <Compile Include="WhOperate\DaOpReceiving.cs" />
+    <Compile Include="WhOperate\FormOpReceiving.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WhOperate\FormOpReceiving.Designer.cs">
+      <DependentUpon>FormOpReceiving.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,7 +190,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="WhOperate\FormOpReceiving.resx">
+      <DependentUpon>FormOpReceiving.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="db_file\wcs_local.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

@@ -1,7 +1,4 @@
 C:\GitCode\c-sharp\WinAppWmsLite01\WinAppWcsClient01\bin\Debug\db_file\wcs_local.db
-C:\GitCode\c-sharp\WinAppWmsLite01\WinAppWcsClient01\bin\Debug\WinAppWcsClient01.exe.config
-C:\GitCode\c-sharp\WinAppWmsLite01\WinAppWcsClient01\bin\Debug\WinAppWcsClient01.exe
-C:\GitCode\c-sharp\WinAppWmsLite01\WinAppWcsClient01\bin\Debug\WinAppWcsClient01.pdb
 C:\GitCode\c-sharp\WinAppWmsLite01\WinAppWcsClient01\bin\Debug\DataMatrix.net.dll
 C:\GitCode\c-sharp\WinAppWmsLite01\WinAppWcsClient01\bin\Debug\EntityFramework.dll
 C:\GitCode\c-sharp\WinAppWmsLite01\WinAppWcsClient01\bin\Debug\EntityFramework.SqlServer.dll
@@ -36,8 +33,12 @@ C:\GitCode\c-sharp\WinAppWmsLite01\WinAppWcsClient01\obj\Debug\WinAppWmsLite.Ite
 C:\GitCode\c-sharp\WinAppWmsLite01\WinAppWcsClient01\obj\Debug\WinAppWmsLite.ItemMaintain.FormItemMaintain.resources
 C:\GitCode\c-sharp\WinAppWmsLite01\WinAppWcsClient01\obj\Debug\WinAppWmsLite.LocationMgt.FormLaneMgt.resources
 C:\GitCode\c-sharp\WinAppWmsLite01\WinAppWcsClient01\obj\Debug\WinAppWmsLite.LocationMgt.FormLocationMapSet.resources
-C:\GitCode\c-sharp\WinAppWmsLite01\WinAppWcsClient01\obj\Debug\WinAppWcsClient01.Properties.Resources.resources
 C:\GitCode\c-sharp\WinAppWmsLite01\WinAppWcsClient01\obj\Debug\WinAppWmsLite01.csproj.GenerateResource.cache
 C:\GitCode\c-sharp\WinAppWmsLite01\WinAppWcsClient01\obj\Debug\WinAppWmsLite01.csproj.CopyComplete
-C:\GitCode\c-sharp\WinAppWmsLite01\WinAppWcsClient01\obj\Debug\WinAppWcsClient01.exe
-C:\GitCode\c-sharp\WinAppWmsLite01\WinAppWcsClient01\obj\Debug\WinAppWcsClient01.pdb
+C:\GitCode\c-sharp\WinAppWmsLite01\WinAppWcsClient01\bin\Debug\WinAppWmsLite01.exe.config
+C:\GitCode\c-sharp\WinAppWmsLite01\WinAppWcsClient01\bin\Debug\WinAppWmsLite01.exe
+C:\GitCode\c-sharp\WinAppWmsLite01\WinAppWcsClient01\bin\Debug\WinAppWmsLite01.pdb
+C:\GitCode\c-sharp\WinAppWmsLite01\WinAppWcsClient01\obj\Debug\WinAppWmsLite.Properties.Resources.resources
+C:\GitCode\c-sharp\WinAppWmsLite01\WinAppWcsClient01\obj\Debug\WinAppWmsLite.WhOperate.FormOpReceiving.resources
+C:\GitCode\c-sharp\WinAppWmsLite01\WinAppWcsClient01\obj\Debug\WinAppWmsLite01.exe
+C:\GitCode\c-sharp\WinAppWmsLite01\WinAppWcsClient01\obj\Debug\WinAppWmsLite01.pdb

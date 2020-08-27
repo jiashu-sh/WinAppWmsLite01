@@ -16,6 +16,7 @@ namespace WinAppWmsLite
         public static int WAREHOUSE_ID = 1;
         public static int USER_ID = 1;
         public static DataSet DS_BC_CUSTOMER = null;
+        public static DataSet DS_BC_UOM = null;
 
         public FormMain()
         {
@@ -25,6 +26,7 @@ namespace WinAppWmsLite
         private void FormMain_Load(object sender, EventArgs e)
         {
             DS_BC_CUSTOMER = Common.CommonDa.ExecuteQuery("select customer_id,customer_desc from bc_customer where void=0 order by customer_id ");
+            DS_BC_UOM = Common.CommonDa.ExecuteQuery("select code_id,code_desc from bc_common_code where void=0 and code_type_id=1 order by code_id ");
 
             DataSet dsWh = Common.CommonDa.ExecuteQuery("select warehouse_id from loc_warehouse where void=0  ");
             if (dsWh != null)
@@ -38,6 +40,7 @@ namespace WinAppWmsLite
                     MessageBox.Show(ex.Message);
                 }
             }
+
         }
 
         private void tsmiSubExit_Click(object sender, EventArgs e)
@@ -93,6 +96,25 @@ namespace WinAppWmsLite
             formItemMaintain.Activate();
         }
 
-        
+        private void tsmiOpReceiving_Click(object sender, EventArgs e)
+        {
+            WhOperate.FormOpReceiving formOpReceiving = null;
+            foreach (Form ftemp in this.MdiChildren) //查找当前父表单所有子表单
+            {
+                if (ftemp is WhOperate.FormOpReceiving)
+                {
+                    formOpReceiving = (WhOperate.FormOpReceiving)ftemp;
+                    break;
+                }
+            }
+            if (formOpReceiving == null || formOpReceiving.IsDisposed)
+            {
+                formOpReceiving = new WhOperate.FormOpReceiving();
+                formOpReceiving.MdiParent = this;
+            }
+            formOpReceiving.Show();
+            //formItemMaintain.WindowState = FormWindowState.Maximized;
+            formOpReceiving.Activate();
+        }
     }
 }

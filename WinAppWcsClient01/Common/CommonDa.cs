@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WinAppWmsLite.Entities;
 
 namespace WinAppWmsLite.Common
 {
@@ -44,5 +45,7 @@ namespace WinAppWmsLite.Common
         {
             return EnumDbTypes.Sqlite;
         }
+
+        
     }
 }

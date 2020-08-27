@@ -75,14 +75,20 @@ where i.void=0";
             cbCustomeId.ValueMember = "customer_id";
             if (FormMain.DS_BC_CUSTOMER != null)
             {
-                //if (FormMain.DS_BC_CUSTOMER.Tables[0].Rows.Count > 1)
-                DataTable dtCust = FormMain.DS_BC_CUSTOMER.Tables[0];
-                System.Data.DataRow dr = dtCust.NewRow();
-                dr["customer_id"] = -1; // CommonDefine.MSG_SELECT;
-                dr["customer_desc"] = "全部"; // CommonDefine.MSG_SELECT;
-                dtCust.Rows.Add(dr);
-                cbCustomeId.DataSource = dtCust;
-                cbCustomeId.SelectedValue = -1;
+                if (FormMain.DS_BC_CUSTOMER.Tables[0].Rows.Count > 1)
+                {
+                    DataTable dtCust = FormMain.DS_BC_CUSTOMER.Tables[0];
+                    System.Data.DataRow dr = dtCust.NewRow();
+                    dr["customer_id"] = -1; // CommonDefine.MSG_SELECT;
+                    dr["customer_desc"] = "全部"; // CommonDefine.MSG_SELECT;
+                    dtCust.Rows.Add(dr);
+                    cbCustomeId.DataSource = dtCust;
+                    cbCustomeId.SelectedValue = -1;
+                }
+                else
+                    cbCustomeId.DataSource = FormMain.DS_BC_CUSTOMER.Tables[0];
+                if (cbCustomeId.Items.Count > 0)
+                    cbCustomeId.SelectedIndex = 0;
 
                 try
                 {

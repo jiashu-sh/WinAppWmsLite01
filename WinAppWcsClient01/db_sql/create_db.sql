@@ -270,7 +270,7 @@ CREATE TABLE main.bc_customer (
   customer_id integer NOT NULL,
   customer_desc varchar(50) NOT NULL,  
   remark_desc varchar(50) null ,
-  void integer default 0  DEFAULT 0,
+  void integer default 0,
   update_time timestamp,
   update_uid integer default 0 
 )
@@ -278,3 +278,58 @@ CREATE TABLE main.bc_customer (
 
 insert into bc_customer (customer_id,customer_desc,void) values (0,'默认客户',0)
 
+-- ----------------------------
+-- Table structure for bc_common_code
+-- ----------------------------
+DROP TABLE IF EXISTS main.bc_common_code;
+CREATE TABLE main.bc_common_code (
+  bc_common_code_id integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+  code_type_id integer NOT NULL,
+  code_id integer NOT NULL,
+  code_desc varchar(50) NOT NULL,  
+  remark_desc varchar(50) null ,
+  void integer default 0,
+  update_time timestamp,
+  update_uid integer default 0 
+)
+;
+
+insert into bc_common_code (code_type_id,code_id,code_desc,remark_desc,void) values (1,0,'件','计量单位',0)
+
+-- ----------------------------
+-- Table structure for wh_order_head
+-- ----------------------------
+DROP TABLE IF EXISTS main.wh_order_head;
+CREATE TABLE main.wh_order_head (
+  wh_order_head_id integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+  order_id integer NOT NULL,
+  order_no varchar(50) NOT NULL,
+  order_type_id integer NOT NULL default 0,
+  customer_id integer NOT NULL default 0,
+  remark_desc varchar(50) null ,
+  void integer default 0,
+  update_time timestamp,
+  update_uid integer default 0 
+)
+;
+
+-- ----------------------------
+-- Table structure for wh_io_logs
+-- ----------------------------
+DROP TABLE IF EXISTS main.wh_io_logs;
+CREATE TABLE main.wh_io_logs (
+  wh_io_logs_id integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+  io_type_id integer NOT NULL default 0,
+  order_id integer NOT NULL,
+  product_no integer NOT NULL,
+  qty int NOT NULL default 0,
+  uom_id integer NOT NULL default 0,
+  customer_id integer NOT NULL default 0,
+  lot_no varchar(50) null ,
+  serial_no varchar(50) null , 
+  cntr_id varchar(50) null, 
+  void integer default 0,
+  update_time timestamp,
+  update_uid integer default 0 
+)
+;
