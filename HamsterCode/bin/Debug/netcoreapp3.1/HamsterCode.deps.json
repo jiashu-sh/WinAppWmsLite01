@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "HamsterCode/1.0.0": {
+        "dependencies": {
+          "HamsterModel": "1.0.0"
+        },
+        "runtime": {
+          "HamsterCode.dll": {}
+        }
+      },
+      "HamsterModel/1.0.0": {
+        "runtime": {
+          "HamsterModel.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "HamsterCode/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HamsterModel/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

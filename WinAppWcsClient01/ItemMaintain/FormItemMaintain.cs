@@ -76,5 +76,10 @@ where i.void=0";
                 //}
             }
         }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

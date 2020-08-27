@@ -61,12 +61,12 @@
             this.lbXTip = new System.Windows.Forms.Label();
             this.btnInsert = new System.Windows.Forms.Button();
             this.gvListItem = new System.Windows.Forms.DataGridView();
-            this.gvListItemBarcode = new System.Windows.Forms.DataGridView();
             this.col_product_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_item_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_item_barcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_item_desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_customer_desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gvListItemBarcode = new System.Windows.Forms.DataGridView();
             this.pnlTopTitle.SuspendLayout();
             this.pnlTitleNo.SuspendLayout();
             this.pnlMain.SuspendLayout();
@@ -385,6 +385,7 @@
             this.btnInsert.TabIndex = 10;
             this.btnInsert.Text = "保存产品";
             this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // gvListItem
             // 
@@ -407,17 +408,6 @@
             this.gvListItem.Size = new System.Drawing.Size(604, 368);
             this.gvListItem.TabIndex = 17;
             this.gvListItem.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gvListItem_CellMouseDoubleClick);
-            // 
-            // gvListItemBarcode
-            // 
-            this.gvListItemBarcode.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvListItemBarcode.Dock = System.Windows.Forms.DockStyle.Right;
-            this.gvListItemBarcode.Location = new System.Drawing.Point(604, 157);
-            this.gvListItemBarcode.Name = "gvListItemBarcode";
-            this.gvListItemBarcode.RowTemplate.Height = 23;
-            this.gvListItemBarcode.Size = new System.Drawing.Size(180, 368);
-            this.gvListItemBarcode.TabIndex = 17;
-            this.gvListItemBarcode.Visible = false;
             // 
             // col_product_no
             // 
@@ -460,6 +450,17 @@
             this.col_customer_desc.Name = "col_customer_desc";
             this.col_customer_desc.ReadOnly = true;
             this.col_customer_desc.Width = 80;
+            // 
+            // gvListItemBarcode
+            // 
+            this.gvListItemBarcode.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvListItemBarcode.Dock = System.Windows.Forms.DockStyle.Right;
+            this.gvListItemBarcode.Location = new System.Drawing.Point(604, 157);
+            this.gvListItemBarcode.Name = "gvListItemBarcode";
+            this.gvListItemBarcode.RowTemplate.Height = 23;
+            this.gvListItemBarcode.Size = new System.Drawing.Size(180, 368);
+            this.gvListItemBarcode.TabIndex = 17;
+            this.gvListItemBarcode.Visible = false;
             // 
             // FormItemMaintain
             // 
