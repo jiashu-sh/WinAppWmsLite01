@@ -32,14 +32,16 @@
             this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.tsmiMainFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSubExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiMainOperate = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiOpReceiving = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMainLocationMgt = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiLocationMapSet = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMainItemMgt = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiItemMaintain = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMainHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiHelpAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiMainOperate = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiOpReceiving = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiMainWhManagement = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiWmStockQuery = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +58,7 @@
             this.menuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiMainFile,
             this.tsmiMainOperate,
+            this.tsmiMainWhManagement,
             this.tsmiMainLocationMgt,
             this.tsmiMainItemMgt,
             this.tsmiMainHelp});
@@ -76,9 +79,24 @@
             // tsmiSubExit
             // 
             this.tsmiSubExit.Name = "tsmiSubExit";
-            this.tsmiSubExit.Size = new System.Drawing.Size(180, 22);
+            this.tsmiSubExit.Size = new System.Drawing.Size(119, 22);
             this.tsmiSubExit.Text = "退出 (&E)";
             this.tsmiSubExit.Click += new System.EventHandler(this.tsmiSubExit_Click);
+            // 
+            // tsmiMainOperate
+            // 
+            this.tsmiMainOperate.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiOpReceiving});
+            this.tsmiMainOperate.Name = "tsmiMainOperate";
+            this.tsmiMainOperate.Size = new System.Drawing.Size(62, 21);
+            this.tsmiMainOperate.Text = "操作(&O)";
+            // 
+            // tsmiOpReceiving
+            // 
+            this.tsmiOpReceiving.Name = "tsmiOpReceiving";
+            this.tsmiOpReceiving.Size = new System.Drawing.Size(180, 22);
+            this.tsmiOpReceiving.Text = "入库(&R)";
+            this.tsmiOpReceiving.Click += new System.EventHandler(this.tsmiOpReceiving_Click);
             // 
             // tsmiMainLocationMgt
             // 
@@ -106,7 +124,7 @@
             // tsmiItemMaintain
             // 
             this.tsmiItemMaintain.Name = "tsmiItemMaintain";
-            this.tsmiItemMaintain.Size = new System.Drawing.Size(180, 22);
+            this.tsmiItemMaintain.Size = new System.Drawing.Size(124, 22);
             this.tsmiItemMaintain.Text = "产品管理";
             this.tsmiItemMaintain.Click += new System.EventHandler(this.tsmiItemMaintain_Click);
             // 
@@ -125,20 +143,20 @@
             this.tsmiHelpAbout.Text = "关于 (&A)";
             this.tsmiHelpAbout.Click += new System.EventHandler(this.tsmiHelpAbout_Click);
             // 
-            // tsmiMainOperate
+            // tsmiMainWhManagement
             // 
-            this.tsmiMainOperate.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiOpReceiving});
-            this.tsmiMainOperate.Name = "tsmiMainOperate";
-            this.tsmiMainOperate.Size = new System.Drawing.Size(62, 21);
-            this.tsmiMainOperate.Text = "操作(&O)";
+            this.tsmiMainWhManagement.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiWmStockQuery});
+            this.tsmiMainWhManagement.Name = "tsmiMainWhManagement";
+            this.tsmiMainWhManagement.Size = new System.Drawing.Size(64, 21);
+            this.tsmiMainWhManagement.Text = "管理(&M)";
             // 
-            // tsmiOpReceiving
+            // tsmiWmStockQuery
             // 
-            this.tsmiOpReceiving.Name = "tsmiOpReceiving";
-            this.tsmiOpReceiving.Size = new System.Drawing.Size(180, 22);
-            this.tsmiOpReceiving.Text = "入库(&R)";
-            this.tsmiOpReceiving.Click += new System.EventHandler(this.tsmiOpReceiving_Click);
+            this.tsmiWmStockQuery.Name = "tsmiWmStockQuery";
+            this.tsmiWmStockQuery.Size = new System.Drawing.Size(180, 22);
+            this.tsmiWmStockQuery.Text = "库存查询";
+            this.tsmiWmStockQuery.Click += new System.EventHandler(this.tsmiWmStockQuery_Click);
             // 
             // FormMain
             // 
@@ -174,6 +192,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiItemMaintain;
         private System.Windows.Forms.ToolStripMenuItem tsmiMainOperate;
         private System.Windows.Forms.ToolStripMenuItem tsmiOpReceiving;
+        private System.Windows.Forms.ToolStripMenuItem tsmiMainWhManagement;
+        private System.Windows.Forms.ToolStripMenuItem tsmiWmStockQuery;
     }
 }
 

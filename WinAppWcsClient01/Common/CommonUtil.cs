@@ -84,6 +84,7 @@ where i.void=0
                         Entities.EntityItemBarcode ib = new Entities.EntityItemBarcode();
                         ib.CustomerId = iCustomerId;
                         ib.ProductNo = entityItem.ProductNo;
+                        ib.ItemBarcode = dr["item_barcode"].ToString();
 
                         lstItemBarcodes.Add(ib);
                     }

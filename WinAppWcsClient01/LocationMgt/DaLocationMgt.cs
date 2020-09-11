@@ -63,7 +63,7 @@ namespace WinAppWmsLite.LocationMgt
                         foreach (Entities.EntityLocLane lane in listLocLanes)
                         {
                             sqlPg = "insert into loc_lane (lane_no,lane_desc,area_no,lane_pri,layers_set,x_point,y_point,lane_direction,lane_order,update_uid,update_time) values "
-                                + "(@lane_no,@lane_desc,@area_no,@lane_pri,@layers_set,@x_point,@y_point,@lane_direction,@lane_order,@update_uid,datetime('now'))";
+                                + "(@lane_no,@lane_desc,@area_no,@lane_pri,@layers_set,@x_point,@y_point,@lane_direction,@lane_order,@update_uid,datetime('now','localtime'))";
                             cmd.CommandText = sqlPg;
                             cmd.Parameters.Clear();
                             cmd.Parameters.AddWithValue("@lane_no", lane.LaneNo);
@@ -85,7 +85,7 @@ namespace WinAppWmsLite.LocationMgt
                         foreach (Entities.EntityLocShelf shelf in listLocShelfs)
                         {
                             sqlPg = "insert into loc_shelf (shelf_no,lane_no,shelf_index,shelf_desc,layers_set,locs_set,storage_type_id,shelf_pri,abc_class,update_uid,update_time) values "
-                                + "(@shelf_no,@lane_no,@shelf_index,@shelf_desc,@layers_set,@locs_set,@storage_type_id,@shelf_pri,@abc_class,@update_uid,datetime('now'))";
+                                + "(@shelf_no,@lane_no,@shelf_index,@shelf_desc,@layers_set,@locs_set,@storage_type_id,@shelf_pri,@abc_class,@update_uid,datetime('now','localtime'))";
                             cmd.CommandText = sqlPg;
                             cmd.Parameters.Clear();
                             cmd.Parameters.AddWithValue("@shelf_no", shelf.ShelfNo);
@@ -107,7 +107,7 @@ namespace WinAppWmsLite.LocationMgt
                         foreach (Entities.EntityLocation loc in listLocations)
                         {
                             sqlPg = "insert into loc_location (location_no,shelf_no,abc_class,location_desc,remark_desc,update_uid,update_time) values "
-                                + "(@location_no,@shelf_no,@abc_class,@location_desc,@remark_desc,@update_uid,datetime('now'))";
+                                + "(@location_no,@shelf_no,@abc_class,@location_desc,@remark_desc,@update_uid,datetime('now','localtime'))";
                             cmd.CommandText = sqlPg;
                             cmd.Parameters.Clear();
                             cmd.Parameters.AddWithValue("@location_no", loc.LocationNo);
