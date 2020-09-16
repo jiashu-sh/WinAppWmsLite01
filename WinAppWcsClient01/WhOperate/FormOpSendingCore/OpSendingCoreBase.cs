@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace WinAppWmsLite.WhOperate.FormOpSendingCore
 {
-    public class OpSendingCoreBase
+    public class OpShippingCoreBase
     {
-        private FormOpSending Form { set; get; }
+        private FormOpShipping Form { set; get; }
 
-        public OpSendingCoreBase(FormOpSending _form)
+        public OpShippingCoreBase(FormOpShipping _form)
         {
             this.Form = _form;
         }
