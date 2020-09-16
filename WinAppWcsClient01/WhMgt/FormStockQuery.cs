@@ -44,6 +44,9 @@ namespace WinAppWmsLite.WhMgt
 
                 tbItemBarcode.Focus();
             }
+
+            dtStartDate.Value = DateTime.Parse("2020-08-01 00:00:00");
+            dtEndDate.Value = DateTime.Now;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -53,6 +56,9 @@ namespace WinAppWmsLite.WhMgt
 
         private void RefreshQuery()
         {
+            string sStartDateTime = dtStartDate.Value.ToString("yyyy-MM-dd") + " 00:00:00";
+            string sEndDateTime = dtEndDate.Value.AddDays(-1).ToString("yyyy-MM-dd") + " 23:59:59";
+
             if ((tbItemBarcode.Text.Trim().IndexOf("'") != -1) ||
                 (tbItemDesc.Text.Trim().IndexOf("'") != -1)
                 )
@@ -94,6 +100,11 @@ group by d.product_no,h.order_type_id
 where 
 i.void = 0
  ";
+            sSql = sSql.Replace("log_date=strftime('%Y-%m-%d',datetime('now','localtime'))", "log_date=strftime('" + dtStartDate.Value.ToString("yyyy-MM-dd") + "',datetime('now','localtime'))");
+            sSql = sSql.Replace("d.update_time >= strftime('%Y-%m-%d 00:00:00',datetime('now','localtime'))", "d.update_time >= strftime('" + sStartDateTime + "', datetime('now', 'localtime'))");
+            if (rbHisStock.Checked)
+                sSql = sSql.Replace("d.update_time<= strftime('%Y-%m-%d 23:59:59',datetime('now','localtime'))", "d.update_time<= strftime('"+ sEndDateTime + "',datetime('now','localtime'))");
+
             if (paraItemQuery.CustomerId != -1)
                 sSql += " and i.customer_id = 0  ";
             if (!paraItemQuery.IsListAllItems)
@@ -110,6 +121,11 @@ i.void = 0
 
             gvListItems.DataSource = dsItems.Tables[0];
 
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

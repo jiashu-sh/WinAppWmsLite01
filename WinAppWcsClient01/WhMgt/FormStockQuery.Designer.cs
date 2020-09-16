@@ -28,36 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitterBottom = new System.Windows.Forms.Splitter();
             this.tbItemDesc = new System.Windows.Forms.TextBox();
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.pnlStatus = new System.Windows.Forms.Panel();
             this.lbTipAreaNo = new System.Windows.Forms.Label();
             this.gvListItems = new System.Windows.Forms.DataGridView();
-            this.cbCustomeId = new System.Windows.Forms.ComboBox();
-            this.lbCustomerNo = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.gvListItemLocations = new System.Windows.Forms.DataGridView();
-            this.splitterTop = new System.Windows.Forms.Splitter();
-            this.lbItemDesc = new System.Windows.Forms.Label();
-            this.pnlTopTitle = new System.Windows.Forms.Panel();
-            this.lbTitleDesc = new System.Windows.Forms.Label();
-            this.pnlTitleNo = new System.Windows.Forms.Panel();
-            this.lbTitle = new System.Windows.Forms.Label();
-            this.pnlMain = new System.Windows.Forms.Panel();
-            this.tbItemBarcode = new System.Windows.Forms.TextBox();
-            this.lbItemNo = new System.Windows.Forms.Label();
-            this.btnExportExcel = new System.Windows.Forms.Button();
-            this.cbListAllItem = new System.Windows.Forms.CheckBox();
             this.col_product_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_item_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_customer_desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +51,27 @@
             this.col_SoQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_StockQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_item_desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbCustomeId = new System.Windows.Forms.ComboBox();
+            this.lbCustomerNo = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnExportExcel = new System.Windows.Forms.Button();
+            this.gvListItemLocations = new System.Windows.Forms.DataGridView();
+            this.splitterTop = new System.Windows.Forms.Splitter();
+            this.lbItemDesc = new System.Windows.Forms.Label();
+            this.pnlTopTitle = new System.Windows.Forms.Panel();
+            this.lbTitleDesc = new System.Windows.Forms.Label();
+            this.pnlTitleNo = new System.Windows.Forms.Panel();
+            this.lbTitle = new System.Windows.Forms.Label();
+            this.pnlMain = new System.Windows.Forms.Panel();
+            this.dtEndDate = new System.Windows.Forms.DateTimePicker();
+            this.dtStartDate = new System.Windows.Forms.DateTimePicker();
+            this.rbHisStock = new System.Windows.Forms.RadioButton();
+            this.rbRealTimeStock = new System.Windows.Forms.RadioButton();
+            this.cbListAllItem = new System.Windows.Forms.CheckBox();
+            this.tbItemBarcode = new System.Windows.Forms.TextBox();
+            this.lbItemNo = new System.Windows.Forms.Label();
+            this.btnExit = new System.Windows.Forms.Button();
             this.pnlBottom.SuspendLayout();
             this.pnlStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvListItems)).BeginInit();
@@ -89,11 +94,11 @@
             // 
             // tbItemDesc
             // 
-            this.tbItemDesc.Location = new System.Drawing.Point(124, 44);
+            this.tbItemDesc.Location = new System.Drawing.Point(404, 48);
             this.tbItemDesc.MaxLength = 50;
             this.tbItemDesc.Name = "tbItemDesc";
             this.tbItemDesc.Size = new System.Drawing.Size(433, 23);
-            this.tbItemDesc.TabIndex = 1;
+            this.tbItemDesc.TabIndex = 2;
             // 
             // pnlBottom
             // 
@@ -147,22 +152,120 @@
             this.gvListItems.Size = new System.Drawing.Size(704, 368);
             this.gvListItems.TabIndex = 23;
             // 
+            // col_product_no
+            // 
+            this.col_product_no.DataPropertyName = "product_no";
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("微软雅黑", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.col_product_no.DefaultCellStyle = dataGridViewCellStyle1;
+            this.col_product_no.HeaderText = "产品号";
+            this.col_product_no.Name = "col_product_no";
+            this.col_product_no.ReadOnly = true;
+            this.col_product_no.Width = 80;
+            // 
+            // col_item_no
+            // 
+            this.col_item_no.DataPropertyName = "item_no";
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 7.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Navy;
+            this.col_item_no.DefaultCellStyle = dataGridViewCellStyle2;
+            this.col_item_no.HeaderText = "产品编码 (主条码)";
+            this.col_item_no.Name = "col_item_no";
+            this.col_item_no.ReadOnly = true;
+            this.col_item_no.Width = 120;
+            // 
+            // col_customer_desc
+            // 
+            this.col_customer_desc.DataPropertyName = "customer_desc";
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Teal;
+            this.col_customer_desc.DefaultCellStyle = dataGridViewCellStyle3;
+            this.col_customer_desc.HeaderText = "货主";
+            this.col_customer_desc.Name = "col_customer_desc";
+            this.col_customer_desc.ReadOnly = true;
+            this.col_customer_desc.Visible = false;
+            this.col_customer_desc.Width = 80;
+            // 
+            // col_customer_id
+            // 
+            this.col_customer_id.DataPropertyName = "customer_id";
+            this.col_customer_id.HeaderText = "customer_id";
+            this.col_customer_id.Name = "col_customer_id";
+            this.col_customer_id.ReadOnly = true;
+            this.col_customer_id.Visible = false;
+            // 
+            // col_s1Qty
+            // 
+            this.col_s1Qty.DataPropertyName = "s1Qty";
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DarkGreen;
+            this.col_s1Qty.DefaultCellStyle = dataGridViewCellStyle4;
+            this.col_s1Qty.HeaderText = "初始库存";
+            this.col_s1Qty.Name = "col_s1Qty";
+            this.col_s1Qty.ReadOnly = true;
+            this.col_s1Qty.Width = 80;
+            // 
+            // col_PoQty
+            // 
+            this.col_PoQty.DataPropertyName = "PoQty";
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Navy;
+            this.col_PoQty.DefaultCellStyle = dataGridViewCellStyle5;
+            this.col_PoQty.HeaderText = "入库数";
+            this.col_PoQty.Name = "col_PoQty";
+            this.col_PoQty.ReadOnly = true;
+            this.col_PoQty.Width = 70;
+            // 
+            // col_SoQty
+            // 
+            this.col_SoQty.DataPropertyName = "SoQty";
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.col_SoQty.DefaultCellStyle = dataGridViewCellStyle6;
+            this.col_SoQty.HeaderText = "出库数";
+            this.col_SoQty.Name = "col_SoQty";
+            this.col_SoQty.ReadOnly = true;
+            this.col_SoQty.Width = 70;
+            // 
+            // col_StockQty
+            // 
+            this.col_StockQty.DataPropertyName = "StockQty";
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.col_StockQty.DefaultCellStyle = dataGridViewCellStyle7;
+            this.col_StockQty.HeaderText = "库存量";
+            this.col_StockQty.Name = "col_StockQty";
+            this.col_StockQty.ReadOnly = true;
+            this.col_StockQty.Width = 80;
+            // 
+            // col_item_desc
+            // 
+            this.col_item_desc.DataPropertyName = "item_desc";
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("宋体", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.col_item_desc.DefaultCellStyle = dataGridViewCellStyle8;
+            this.col_item_desc.HeaderText = "产品描述";
+            this.col_item_desc.Name = "col_item_desc";
+            this.col_item_desc.ReadOnly = true;
+            this.col_item_desc.Width = 250;
+            // 
             // cbCustomeId
             // 
             this.cbCustomeId.FormattingEnabled = true;
-            this.cbCustomeId.Location = new System.Drawing.Point(404, 15);
+            this.cbCustomeId.Location = new System.Drawing.Point(108, 15);
             this.cbCustomeId.Name = "cbCustomeId";
             this.cbCustomeId.Size = new System.Drawing.Size(153, 25);
-            this.cbCustomeId.TabIndex = 16;
+            this.cbCustomeId.TabIndex = 3;
+            this.cbCustomeId.TabStop = false;
             // 
             // lbCustomerNo
             // 
             this.lbCustomerNo.AutoSize = true;
-            this.lbCustomerNo.Location = new System.Drawing.Point(357, 19);
+            this.lbCustomerNo.Location = new System.Drawing.Point(41, 19);
             this.lbCustomerNo.Name = "lbCustomerNo";
-            this.lbCustomerNo.Size = new System.Drawing.Size(32, 17);
+            this.lbCustomerNo.Size = new System.Drawing.Size(61, 17);
             this.lbCustomerNo.TabIndex = 15;
-            this.lbCustomerNo.Text = "客户";
+            this.lbCustomerNo.Text = "货主/客户";
             // 
             // panel1
             // 
@@ -179,11 +282,22 @@
             this.btnSearch.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnSearch.Location = new System.Drawing.Point(0, 0);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(169, 35);
+            this.btnSearch.Size = new System.Drawing.Size(150, 35);
             this.btnSearch.TabIndex = 10;
             this.btnSearch.Text = "查询";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnExportExcel
+            // 
+            this.btnExportExcel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExportExcel.Location = new System.Drawing.Point(704, 0);
+            this.btnExportExcel.Name = "btnExportExcel";
+            this.btnExportExcel.Size = new System.Drawing.Size(180, 35);
+            this.btnExportExcel.TabIndex = 11;
+            this.btnExportExcel.Text = "导出Excel";
+            this.btnExportExcel.UseVisualStyleBackColor = true;
+            this.btnExportExcel.Visible = false;
             // 
             // gvListItemLocations
             // 
@@ -209,7 +323,7 @@
             // lbItemDesc
             // 
             this.lbItemDesc.AutoSize = true;
-            this.lbItemDesc.Location = new System.Drawing.Point(26, 47);
+            this.lbItemDesc.Location = new System.Drawing.Point(357, 51);
             this.lbItemDesc.Name = "lbItemDesc";
             this.lbItemDesc.Size = new System.Drawing.Size(32, 17);
             this.lbItemDesc.TabIndex = 0;
@@ -217,6 +331,7 @@
             // 
             // pnlTopTitle
             // 
+            this.pnlTopTitle.Controls.Add(this.btnExit);
             this.pnlTopTitle.Controls.Add(this.lbTitleDesc);
             this.pnlTopTitle.Controls.Add(this.pnlTitleNo);
             this.pnlTopTitle.Dock = System.Windows.Forms.DockStyle.Top;
@@ -260,6 +375,10 @@
             // pnlMain
             // 
             this.pnlMain.BackColor = System.Drawing.Color.White;
+            this.pnlMain.Controls.Add(this.dtEndDate);
+            this.pnlMain.Controls.Add(this.dtStartDate);
+            this.pnlMain.Controls.Add(this.rbHisStock);
+            this.pnlMain.Controls.Add(this.rbRealTimeStock);
             this.pnlMain.Controls.Add(this.cbListAllItem);
             this.pnlMain.Controls.Add(this.cbCustomeId);
             this.pnlMain.Controls.Add(this.lbCustomerNo);
@@ -274,10 +393,64 @@
             this.pnlMain.Size = new System.Drawing.Size(884, 116);
             this.pnlMain.TabIndex = 22;
             // 
+            // dtEndDate
+            // 
+            this.dtEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtEndDate.Location = new System.Drawing.Point(598, 16);
+            this.dtEndDate.MaxDate = new System.DateTime(2076, 1, 30, 0, 0, 0, 0);
+            this.dtEndDate.MinDate = new System.DateTime(2020, 8, 1, 0, 0, 0, 0);
+            this.dtEndDate.Name = "dtEndDate";
+            this.dtEndDate.Size = new System.Drawing.Size(104, 23);
+            this.dtEndDate.TabIndex = 7;
+            this.dtEndDate.TabStop = false;
+            // 
+            // dtStartDate
+            // 
+            this.dtStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtStartDate.Location = new System.Drawing.Point(488, 16);
+            this.dtStartDate.MaxDate = new System.DateTime(2076, 1, 30, 0, 0, 0, 0);
+            this.dtStartDate.MinDate = new System.DateTime(2020, 8, 1, 0, 0, 0, 0);
+            this.dtStartDate.Name = "dtStartDate";
+            this.dtStartDate.Size = new System.Drawing.Size(104, 23);
+            this.dtStartDate.TabIndex = 6;
+            this.dtStartDate.TabStop = false;
+            // 
+            // rbHisStock
+            // 
+            this.rbHisStock.AutoSize = true;
+            this.rbHisStock.Location = new System.Drawing.Point(367, 17);
+            this.rbHisStock.Name = "rbHisStock";
+            this.rbHisStock.Size = new System.Drawing.Size(114, 21);
+            this.rbHisStock.TabIndex = 5;
+            this.rbHisStock.Text = "零点库存 时间：";
+            this.rbHisStock.UseVisualStyleBackColor = true;
+            // 
+            // rbRealTimeStock
+            // 
+            this.rbRealTimeStock.AutoSize = true;
+            this.rbRealTimeStock.Checked = true;
+            this.rbRealTimeStock.Location = new System.Drawing.Point(287, 17);
+            this.rbRealTimeStock.Name = "rbRealTimeStock";
+            this.rbRealTimeStock.Size = new System.Drawing.Size(74, 21);
+            this.rbRealTimeStock.TabIndex = 4;
+            this.rbRealTimeStock.TabStop = true;
+            this.rbRealTimeStock.Text = "实时库存";
+            this.rbRealTimeStock.UseVisualStyleBackColor = true;
+            // 
+            // cbListAllItem
+            // 
+            this.cbListAllItem.AutoSize = true;
+            this.cbListAllItem.Location = new System.Drawing.Point(726, 17);
+            this.cbListAllItem.Name = "cbListAllItem";
+            this.cbListAllItem.Size = new System.Drawing.Size(111, 21);
+            this.cbListAllItem.TabIndex = 8;
+            this.cbListAllItem.Text = "包括无库存产品";
+            this.cbListAllItem.UseVisualStyleBackColor = true;
+            // 
             // tbItemBarcode
             // 
             this.tbItemBarcode.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
-            this.tbItemBarcode.Location = new System.Drawing.Point(124, 16);
+            this.tbItemBarcode.Location = new System.Drawing.Point(108, 48);
             this.tbItemBarcode.MaxLength = 50;
             this.tbItemBarcode.Name = "tbItemBarcode";
             this.tbItemBarcode.Size = new System.Drawing.Size(154, 23);
@@ -286,129 +459,22 @@
             // lbItemNo
             // 
             this.lbItemNo.AutoSize = true;
-            this.lbItemNo.Location = new System.Drawing.Point(26, 19);
+            this.lbItemNo.Location = new System.Drawing.Point(26, 51);
             this.lbItemNo.Name = "lbItemNo";
             this.lbItemNo.Size = new System.Drawing.Size(76, 17);
             this.lbItemNo.TabIndex = 0;
             this.lbItemNo.Text = "产品(号)条码";
             // 
-            // btnExportExcel
+            // btnExit
             // 
-            this.btnExportExcel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExportExcel.Location = new System.Drawing.Point(704, 0);
-            this.btnExportExcel.Name = "btnExportExcel";
-            this.btnExportExcel.Size = new System.Drawing.Size(180, 35);
-            this.btnExportExcel.TabIndex = 11;
-            this.btnExportExcel.Text = "导出Excel";
-            this.btnExportExcel.UseVisualStyleBackColor = true;
-            this.btnExportExcel.Visible = false;
-            // 
-            // cbListAllItem
-            // 
-            this.cbListAllItem.AutoSize = true;
-            this.cbListAllItem.Location = new System.Drawing.Point(593, 17);
-            this.cbListAllItem.Name = "cbListAllItem";
-            this.cbListAllItem.Size = new System.Drawing.Size(111, 21);
-            this.cbListAllItem.TabIndex = 17;
-            this.cbListAllItem.Text = "包括无库存产品";
-            this.cbListAllItem.UseVisualStyleBackColor = true;
-            // 
-            // col_product_no
-            // 
-            this.col_product_no.DataPropertyName = "product_no";
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("微软雅黑", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.col_product_no.DefaultCellStyle = dataGridViewCellStyle9;
-            this.col_product_no.HeaderText = "产品号";
-            this.col_product_no.Name = "col_product_no";
-            this.col_product_no.ReadOnly = true;
-            this.col_product_no.Width = 80;
-            // 
-            // col_item_no
-            // 
-            this.col_item_no.DataPropertyName = "item_no";
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("微软雅黑", 7.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Navy;
-            this.col_item_no.DefaultCellStyle = dataGridViewCellStyle10;
-            this.col_item_no.HeaderText = "产品编码 (主条码)";
-            this.col_item_no.Name = "col_item_no";
-            this.col_item_no.ReadOnly = true;
-            this.col_item_no.Width = 120;
-            // 
-            // col_customer_desc
-            // 
-            this.col_customer_desc.DataPropertyName = "customer_desc";
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Teal;
-            this.col_customer_desc.DefaultCellStyle = dataGridViewCellStyle11;
-            this.col_customer_desc.HeaderText = "货主";
-            this.col_customer_desc.Name = "col_customer_desc";
-            this.col_customer_desc.ReadOnly = true;
-            this.col_customer_desc.Visible = false;
-            this.col_customer_desc.Width = 80;
-            // 
-            // col_customer_id
-            // 
-            this.col_customer_id.DataPropertyName = "customer_id";
-            this.col_customer_id.HeaderText = "customer_id";
-            this.col_customer_id.Name = "col_customer_id";
-            this.col_customer_id.ReadOnly = true;
-            this.col_customer_id.Visible = false;
-            // 
-            // col_s1Qty
-            // 
-            this.col_s1Qty.DataPropertyName = "s1Qty";
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.DarkGreen;
-            this.col_s1Qty.DefaultCellStyle = dataGridViewCellStyle12;
-            this.col_s1Qty.HeaderText = "初始库存";
-            this.col_s1Qty.Name = "col_s1Qty";
-            this.col_s1Qty.ReadOnly = true;
-            this.col_s1Qty.Width = 80;
-            // 
-            // col_PoQty
-            // 
-            this.col_PoQty.DataPropertyName = "PoQty";
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Navy;
-            this.col_PoQty.DefaultCellStyle = dataGridViewCellStyle13;
-            this.col_PoQty.HeaderText = "入库数";
-            this.col_PoQty.Name = "col_PoQty";
-            this.col_PoQty.ReadOnly = true;
-            this.col_PoQty.Width = 70;
-            // 
-            // col_SoQty
-            // 
-            this.col_SoQty.DataPropertyName = "SoQty";
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.col_SoQty.DefaultCellStyle = dataGridViewCellStyle14;
-            this.col_SoQty.HeaderText = "出库数";
-            this.col_SoQty.Name = "col_SoQty";
-            this.col_SoQty.ReadOnly = true;
-            this.col_SoQty.Width = 70;
-            // 
-            // col_StockQty
-            // 
-            this.col_StockQty.DataPropertyName = "StockQty";
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.col_StockQty.DefaultCellStyle = dataGridViewCellStyle15;
-            this.col_StockQty.HeaderText = "库存量";
-            this.col_StockQty.Name = "col_StockQty";
-            this.col_StockQty.ReadOnly = true;
-            this.col_StockQty.Width = 80;
-            // 
-            // col_item_desc
-            // 
-            this.col_item_desc.DataPropertyName = "item_desc";
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("宋体", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.col_item_desc.DefaultCellStyle = dataGridViewCellStyle16;
-            this.col_item_desc.HeaderText = "产品描述";
-            this.col_item_desc.Name = "col_item_desc";
-            this.col_item_desc.ReadOnly = true;
-            this.col_item_desc.Width = 250;
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExit.Location = new System.Drawing.Point(764, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(120, 40);
+            this.btnExit.TabIndex = 14;
+            this.btnExit.Text = "退出";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // FormStockQuery
             // 
@@ -475,5 +541,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_SoQty;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_StockQty;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_item_desc;
+        private System.Windows.Forms.DateTimePicker dtEndDate;
+        private System.Windows.Forms.DateTimePicker dtStartDate;
+        private System.Windows.Forms.RadioButton rbRealTimeStock;
+        private System.Windows.Forms.RadioButton rbHisStock;
+        private System.Windows.Forms.Button btnExit;
     }
 }

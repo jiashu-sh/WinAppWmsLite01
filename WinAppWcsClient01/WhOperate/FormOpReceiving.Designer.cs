@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitterBottom = new System.Windows.Forms.Splitter();
             this.tbQty = new System.Windows.Forms.TextBox();
             this.pnlBottom = new System.Windows.Forms.Panel();
@@ -37,6 +37,7 @@
             this.cbCustomeId = new System.Windows.Forms.ComboBox();
             this.lbCustomerNo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnClearInput = new System.Windows.Forms.Button();
             this.btnInsertReceivingItem = new System.Windows.Forms.Button();
             this.btnSaveCommit = new System.Windows.Forms.Button();
             this.splitterTop = new System.Windows.Forms.Splitter();
@@ -46,6 +47,8 @@
             this.pnlTitleNo = new System.Windows.Forms.Panel();
             this.lbTitle = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.btnCreateNewItem = new System.Windows.Forms.Button();
+            this.cbInputSnLot = new System.Windows.Forms.CheckBox();
             this.pnlLotSn = new System.Windows.Forms.Panel();
             this.rbSn = new System.Windows.Forms.RadioButton();
             this.rbLot = new System.Windows.Forms.RadioButton();
@@ -54,8 +57,10 @@
             this.lbPoNo = new System.Windows.Forms.Label();
             this.tbProductNo = new System.Windows.Forms.TextBox();
             this.lbContainerNo = new System.Windows.Forms.Label();
+            this.cbUomId = new System.Windows.Forms.ComboBox();
             this.lbQty = new System.Windows.Forms.Label();
             this.lbUom = new System.Windows.Forms.Label();
+            this.tbContainerNo = new System.Windows.Forms.TextBox();
             this.tbBarcode = new System.Windows.Forms.TextBox();
             this.lbItemNoBarcode = new System.Windows.Forms.Label();
             this.gvListItem = new System.Windows.Forms.DataGridView();
@@ -65,9 +70,6 @@
             this.col_item_desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_customer_desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gvListIoLogs = new System.Windows.Forms.DataGridView();
-            this.cbUomId = new System.Windows.Forms.ComboBox();
-            this.tbContainerNo = new System.Windows.Forms.TextBox();
-            this.cbInputSnLot = new System.Windows.Forms.CheckBox();
             this.colIoTypeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colOrderId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIndexNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,8 +77,7 @@
             this.colItemDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colContainerId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnClearInput = new System.Windows.Forms.Button();
-            this.btnCreateNewItem = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.pnlBottom.SuspendLayout();
             this.pnlStatus.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -162,6 +163,17 @@
             this.panel1.Size = new System.Drawing.Size(784, 35);
             this.panel1.TabIndex = 14;
             // 
+            // btnClearInput
+            // 
+            this.btnClearInput.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnClearInput.Location = new System.Drawing.Point(424, 0);
+            this.btnClearInput.Name = "btnClearInput";
+            this.btnClearInput.Size = new System.Drawing.Size(180, 35);
+            this.btnClearInput.TabIndex = 13;
+            this.btnClearInput.Text = "清空";
+            this.btnClearInput.UseVisualStyleBackColor = true;
+            this.btnClearInput.Click += new System.EventHandler(this.btnClearInput_Click);
+            // 
             // btnInsertReceivingItem
             // 
             this.btnInsertReceivingItem.Dock = System.Windows.Forms.DockStyle.Left;
@@ -206,6 +218,7 @@
             // 
             // pnlTopTitle
             // 
+            this.pnlTopTitle.Controls.Add(this.btnExit);
             this.pnlTopTitle.Controls.Add(this.lbTitleDesc);
             this.pnlTopTitle.Controls.Add(this.pnlTitleNo);
             this.pnlTopTitle.Dock = System.Windows.Forms.DockStyle.Top;
@@ -272,6 +285,28 @@
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(784, 225);
             this.pnlMain.TabIndex = 22;
+            // 
+            // btnCreateNewItem
+            // 
+            this.btnCreateNewItem.Location = new System.Drawing.Point(533, 50);
+            this.btnCreateNewItem.Name = "btnCreateNewItem";
+            this.btnCreateNewItem.Size = new System.Drawing.Size(94, 32);
+            this.btnCreateNewItem.TabIndex = 102;
+            this.btnCreateNewItem.Text = "创建新商品";
+            this.btnCreateNewItem.UseVisualStyleBackColor = true;
+            this.btnCreateNewItem.Click += new System.EventHandler(this.btnCreateNewItem_Click);
+            // 
+            // cbInputSnLot
+            // 
+            this.cbInputSnLot.AutoSize = true;
+            this.cbInputSnLot.Location = new System.Drawing.Point(32, 112);
+            this.cbInputSnLot.Name = "cbInputSnLot";
+            this.cbInputSnLot.Size = new System.Drawing.Size(94, 21);
+            this.cbInputSnLot.TabIndex = 2;
+            this.cbInputSnLot.TabStop = false;
+            this.cbInputSnLot.Text = "输入批号/Sn";
+            this.cbInputSnLot.UseVisualStyleBackColor = true;
+            this.cbInputSnLot.CheckedChanged += new System.EventHandler(this.cbInputSnLot_CheckedChanged);
             // 
             // pnlLotSn
             // 
@@ -348,6 +383,14 @@
             this.lbContainerNo.TabIndex = 100;
             this.lbContainerNo.Text = "容器号";
             // 
+            // cbUomId
+            // 
+            this.cbUomId.FormattingEnabled = true;
+            this.cbUomId.Location = new System.Drawing.Point(481, 54);
+            this.cbUomId.Name = "cbUomId";
+            this.cbUomId.Size = new System.Drawing.Size(46, 25);
+            this.cbUomId.TabIndex = 16;
+            // 
             // lbQty
             // 
             this.lbQty.AutoSize = true;
@@ -365,6 +408,16 @@
             this.lbUom.Size = new System.Drawing.Size(32, 17);
             this.lbUom.TabIndex = 15;
             this.lbUom.Text = "单位";
+            // 
+            // tbContainerNo
+            // 
+            this.tbContainerNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tbContainerNo.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
+            this.tbContainerNo.Location = new System.Drawing.Point(150, 152);
+            this.tbContainerNo.MaxLength = 20;
+            this.tbContainerNo.Name = "tbContainerNo";
+            this.tbContainerNo.Size = new System.Drawing.Size(120, 23);
+            this.tbContainerNo.TabIndex = 2;
             // 
             // tbBarcode
             // 
@@ -432,9 +485,9 @@
             // col_item_desc
             // 
             this.col_item_desc.DataPropertyName = "item_desc";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.col_item_desc.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.col_item_desc.DefaultCellStyle = dataGridViewCellStyle2;
             this.col_item_desc.HeaderText = "产品描述";
             this.col_item_desc.Name = "col_item_desc";
             this.col_item_desc.ReadOnly = true;
@@ -467,36 +520,6 @@
             this.gvListIoLogs.RowTemplate.Height = 23;
             this.gvListIoLogs.Size = new System.Drawing.Size(360, 259);
             this.gvListIoLogs.TabIndex = 24;
-            // 
-            // cbUomId
-            // 
-            this.cbUomId.FormattingEnabled = true;
-            this.cbUomId.Location = new System.Drawing.Point(481, 54);
-            this.cbUomId.Name = "cbUomId";
-            this.cbUomId.Size = new System.Drawing.Size(46, 25);
-            this.cbUomId.TabIndex = 16;
-            // 
-            // tbContainerNo
-            // 
-            this.tbContainerNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.tbContainerNo.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
-            this.tbContainerNo.Location = new System.Drawing.Point(150, 152);
-            this.tbContainerNo.MaxLength = 20;
-            this.tbContainerNo.Name = "tbContainerNo";
-            this.tbContainerNo.Size = new System.Drawing.Size(120, 23);
-            this.tbContainerNo.TabIndex = 2;
-            // 
-            // cbInputSnLot
-            // 
-            this.cbInputSnLot.AutoSize = true;
-            this.cbInputSnLot.Location = new System.Drawing.Point(32, 112);
-            this.cbInputSnLot.Name = "cbInputSnLot";
-            this.cbInputSnLot.Size = new System.Drawing.Size(94, 21);
-            this.cbInputSnLot.TabIndex = 2;
-            this.cbInputSnLot.TabStop = false;
-            this.cbInputSnLot.Text = "输入批号/Sn";
-            this.cbInputSnLot.UseVisualStyleBackColor = true;
-            this.cbInputSnLot.CheckedChanged += new System.EventHandler(this.cbInputSnLot_CheckedChanged);
             // 
             // colIoTypeId
             // 
@@ -545,26 +568,16 @@
             this.colContainerId.HeaderText = "容器";
             this.colContainerId.Name = "colContainerId";
             // 
-            // btnClearInput
+            // btnExit
             // 
-            this.btnClearInput.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnClearInput.Location = new System.Drawing.Point(424, 0);
-            this.btnClearInput.Name = "btnClearInput";
-            this.btnClearInput.Size = new System.Drawing.Size(180, 35);
-            this.btnClearInput.TabIndex = 13;
-            this.btnClearInput.Text = "清空";
-            this.btnClearInput.UseVisualStyleBackColor = true;
-            this.btnClearInput.Click += new System.EventHandler(this.btnClearInput_Click);
-            // 
-            // btnCreateNewItem
-            // 
-            this.btnCreateNewItem.Location = new System.Drawing.Point(533, 50);
-            this.btnCreateNewItem.Name = "btnCreateNewItem";
-            this.btnCreateNewItem.Size = new System.Drawing.Size(94, 32);
-            this.btnCreateNewItem.TabIndex = 102;
-            this.btnCreateNewItem.Text = "创建新商品";
-            this.btnCreateNewItem.UseVisualStyleBackColor = true;
-            this.btnCreateNewItem.Click += new System.EventHandler(this.btnCreateNewItem_Click);
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExit.Location = new System.Drawing.Point(664, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(120, 40);
+            this.btnExit.TabIndex = 13;
+            this.btnExit.Text = "退出";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // FormOpReceiving
             // 
@@ -650,5 +663,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colContainerId;
         private System.Windows.Forms.Button btnClearInput;
         private System.Windows.Forms.Button btnCreateNewItem;
+        private System.Windows.Forms.Button btnExit;
     }
 }

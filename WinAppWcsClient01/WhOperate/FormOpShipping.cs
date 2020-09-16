@@ -8,22 +8,21 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WinAppWmsLite.ItemMaintain;
 
 namespace WinAppWmsLite.WhOperate
 {
-    public partial class FormOpReceiving : Form
+    public partial class FormOpShipping : Form
     {
-        private static Entities.EntityOrder RcvOrder;
+        private static Entities.EntityOrder ShipOrder;
         private static List<Entities.EntityIoLogs> EntityIoLogsList;
         private static Entities.EntityItem ScanItem;
 
-        public FormOpReceiving()
+        public FormOpShipping()
         {
             InitializeComponent();
         }
 
-        private void FormOpReceiving_Load(object sender, EventArgs e)
+        private void FormOpShipping_Load(object sender, EventArgs e)
         {
             gvListIoLogs.AutoGenerateColumns = false;
             gvListItem.AutoGenerateColumns = false;
@@ -60,20 +59,19 @@ namespace WinAppWmsLite.WhOperate
             }
 
             InitOrderEntity();
-            //if (!bIsModifyItem) //新增时获取新id
         }
 
         private void InitOrderEntity()
         {
-            int iOrderNo = Common.CommonUtil.GenOrderNo("wh_order_head.order_id", 1);
+            int iOrderNo = Common.CommonUtil.GenOrderNo("wh_order_head.order_id", 0);
             if (iOrderNo != -1)
-                tbPoNo.Text = iOrderNo.ToString();
+                tbSoNo.Text = iOrderNo.ToString();
 
-            RcvOrder = new Entities.EntityOrder();
-            RcvOrder.OrderId = iOrderNo;
-            RcvOrder.OrderNo = iOrderNo.ToString();
-            RcvOrder.OrderTypeId = (int)Common.EnumIoTypes.In;
-            RcvOrder.UserId = FormMain.USER_ID;
+            ShipOrder = new Entities.EntityOrder();
+            ShipOrder.OrderId = iOrderNo;
+            ShipOrder.OrderNo = iOrderNo.ToString();
+            ShipOrder.OrderTypeId = (int)Common.EnumIoTypes.Out;
+            ShipOrder.UserId = FormMain.USER_ID;
 
             EntityIoLogsList = new List<Entities.EntityIoLogs>();
         }
@@ -83,57 +81,8 @@ namespace WinAppWmsLite.WhOperate
             pnlLotSn.Visible = cbInputSnLot.Checked;
         }
 
-        private void btnInsertReceivingItem_Click(object sender, EventArgs e)
+        private void btnClearInput_Click(object sender, EventArgs e)
         {
-            InsertReceivingItemList();
-        }
-
-        private void InsertReceivingItemList()
-        {
-            
-            if (tbContainerNo.Text.Trim() == "")
-            {
-                return;
-            }
-            if ((ScanItem == null) || (ScanItem.ProductNo == -1))
-            {
-                return;
-            }
-            if (tbQty.Text.Trim() == "")
-            {
-                return;
-            }
-            Regex r = new Regex(@"^\d+$");
-            if (!(r.Match(tbQty.Text.Trim()).Success))
-            {
-                return;
-            }
-
-            int iQty = int.Parse(tbQty.Text.Trim());
-            int iIndexNo = EntityIoLogsList.Count + 1;
-
-            Entities.EntityIoLogs ioLogs = new Entities.EntityIoLogs();
-            ioLogs.Item = ScanItem;
-            ioLogs.IoTypeId = (int)Common.EnumIoTypes.In;
-            ioLogs.OrderId = RcvOrder.OrderId;
-            ioLogs.UomId = int.Parse(cbUomId.SelectedValue.ToString());
-            ioLogs.ContainerId = tbContainerNo.Text.Trim();
-            ioLogs.Qty = iQty;
-            if (cbInputSnLot.Checked)
-            {
-                if (rbLot.Checked)
-                    ioLogs.LotNo = tbLotSn.Text.Trim();
-                else if (rbSn.Checked)
-                    ioLogs.SerialNo = tbLotSn.Text.Trim();
-            }
-            ioLogs.IndexNo = iIndexNo;
-            ioLogs.ItemBarcode = ScanItem.ItemBarcodes[0].ItemBarcode;
-            ioLogs.ItemDesc = ScanItem.ItemDesc;
-
-            EntityIoLogsList.Add(ioLogs);
-
-            RefreshIoLogsList();
-
             RefreshInput();
         }
 
@@ -149,17 +98,12 @@ namespace WinAppWmsLite.WhOperate
             ScanItem = null;
         }
 
-        private void RefreshIoLogsList()
-        {
-            gvListIoLogs.DataSource = null;
-            gvListIoLogs.DataSource = EntityIoLogsList;
-        }
-
         private void tbBarcode_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 GetItem();
+                //下面还需要检测库存等操作....
             }
         }
 
@@ -169,7 +113,7 @@ namespace WinAppWmsLite.WhOperate
             if (sBarcode == "")
                 return;
 
-            Entities.EntityItem entityItem = Common.CommonUtil.GetItem(sBarcode,int.Parse(cbCustomeId.SelectedValue.ToString()));
+            Entities.EntityItem entityItem = Common.CommonUtil.GetItem(sBarcode, int.Parse(cbCustomeId.SelectedValue.ToString()));
 
             if ((entityItem != null) && (entityItem.ProductNo != -1))
             {
@@ -202,32 +146,77 @@ namespace WinAppWmsLite.WhOperate
                 lbItemDesc.Text = "商品不存在(未维护基本信息).";
                 lbItemDesc.ForeColor = Color.Red;
             }
-                //MessageBox.Show("商品不存在(未维护基本信息).");
+            //MessageBox.Show("商品不存在(未维护基本信息).");
         }
 
-        private void btnClearInput_Click(object sender, EventArgs e)
+        private void btnInsertShippingItem_Click(object sender, EventArgs e)
         {
+            InsertShippingItemList();
+        }
+
+        private void InsertShippingItemList()
+        {
+
+            if (tbContainerNo.Text.Trim() == "")
+            {
+                return;
+            }
+            if ((ScanItem == null) || (ScanItem.ProductNo == -1))
+            {
+                return;
+            }
+            if (tbQty.Text.Trim() == "")
+            {
+                return;
+            }
+            Regex r = new Regex(@"^\d+$");
+            if (!(r.Match(tbQty.Text.Trim()).Success))
+            {
+                return;
+            }
+
+            int iQty = int.Parse(tbQty.Text.Trim());
+            int iIndexNo = EntityIoLogsList.Count + 1;
+
+            Entities.EntityIoLogs ioLogs = new Entities.EntityIoLogs();
+            ioLogs.Item = ScanItem;
+            ioLogs.IoTypeId = (int)Common.EnumIoTypes.Out;
+            ioLogs.OrderId = ShipOrder.OrderId;
+            ioLogs.UomId = int.Parse(cbUomId.SelectedValue.ToString());
+            ioLogs.ContainerId = tbContainerNo.Text.Trim();
+            ioLogs.Qty = iQty;
+            if (cbInputSnLot.Checked)
+            {
+                if (rbLot.Checked)
+                    ioLogs.LotNo = tbLotSn.Text.Trim();
+                else if (rbSn.Checked)
+                    ioLogs.SerialNo = tbLotSn.Text.Trim();
+            }
+            ioLogs.IndexNo = iIndexNo;
+            ioLogs.ItemBarcode = ScanItem.ItemBarcodes[0].ItemBarcode;
+            ioLogs.ItemDesc = ScanItem.ItemDesc;
+
+            EntityIoLogsList.Add(ioLogs);
+
+            RefreshIoLogsList();
+
             RefreshInput();
         }
 
-        private void btnCreateNewItem_Click(object sender, EventArgs e)
+        private void RefreshIoLogsList()
         {
-            int iCustomerId = int.Parse(cbCustomeId.SelectedValue.ToString());
-            string sItemBarcode = tbBarcode.Text.Trim();
-            FormAddModifyItem formAddModifyItem = new FormAddModifyItem(sItemBarcode,iCustomerId);
-            DialogResult dlgResult = formAddModifyItem.ShowDialog(this);
-            if (dlgResult == DialogResult.OK)
-                GetItem();
+            gvListIoLogs.DataSource = null;
+            gvListIoLogs.DataSource = EntityIoLogsList;
         }
 
         private void btnSaveCommit_Click(object sender, EventArgs e)
         {
-            ReceivingSaveCommit();
+            ShippingSaveCommit();
         }
 
-        private void ReceivingSaveCommit()
+        private void ShippingSaveCommit()
         {
-            if ((RcvOrder == null) || (RcvOrder.OrderId == -1))
+            if ((ShipOrder == null) || (ShipOrder.OrderId == -1))
             {
                 MessageBox.Show("参数 RcvOrder 错误,无法继续.");
                 return;
@@ -238,18 +227,13 @@ namespace WinAppWmsLite.WhOperate
                 return;
             }
 
-            RcvOrder.CustomerId = int.Parse(cbCustomeId.SelectedValue.ToString());
-            RcvOrder.IoLogsList = EntityIoLogsList;
+            ShipOrder.CustomerId = int.Parse(cbCustomeId.SelectedValue.ToString());
+            ShipOrder.IoLogsList = EntityIoLogsList;
 
-            if (DaOpReceiving.ReceivingCommit(RcvOrder))
+            if (DaOpReceiving.ShippingCommit(ShipOrder))
                 MessageBox.Show("保存完成.");
             else
                 MessageBox.Show("保存失败.");
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

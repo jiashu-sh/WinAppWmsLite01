@@ -20,7 +20,7 @@ namespace WinAppWmsLite.LocationMgt
         private bool bShowGrid = true;
         //private bool bEnableConfiguration = false;
 
-        private const int DEFAULT_GRID_SIZE = 50;
+        private const int DEFAULT_GRID_SIZE = 40;
 
         private static int iParaX;
         private static int iParaY;
@@ -131,7 +131,10 @@ namespace WinAppWmsLite.LocationMgt
             //绘制网格底图
             if (bShowGrid) //显示网格
             {
+                #region 绘制网格底图
                 Pen GridLinePen = new Pen(Color.Lavender); //位置画笔
+                GridLinePen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash; //网格设置为虚线
+
                 //System.Drawing.Font font = new System.Drawing.Font("Arial Black", 9); // 绘制文本字体
                 System.Drawing.Font locNoFont = new System.Drawing.Font("Arial Black", 7); // 绘制文本字体
                 Brush locNoTextBrush = Brushes.DodgerBlue;
@@ -228,10 +231,11 @@ namespace WinAppWmsLite.LocationMgt
                         }
                     }
                 }
+                #endregion
 
                 //定义起点终点的半径
-                const int iRadiusStart = 12;
-                const int iRadiusEnd = 15;
+                const int iRadiusStart = DEFAULT_GRID_SIZE * 24 / 100;
+                const int iRadiusEnd = DEFAULT_GRID_SIZE * 3 / 10;
                 //画起点终点
                 Brush EndBrush = Brushes.LightSkyBlue;// Brushes.Lavender;
                 Pen StartPen = new Pen(Brushes.DeepSkyBlue);// Brushes.Lavender;

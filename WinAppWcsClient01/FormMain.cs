@@ -138,14 +138,25 @@ namespace WinAppWmsLite
             formStockQuery.Activate();
         }
 
-        /// <summary>
-        /// 出库
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void tsmiOpSending_Click(object sender, EventArgs e)
+        private void tsmiOpShipping_Click(object sender, EventArgs e)
         {
-
+            WhOperate.FormOpShipping formOpShipping = null;
+            foreach (Form ftemp in this.MdiChildren) //查找当前父表单所有子表单
+            {
+                if (ftemp is WhOperate.FormOpReceiving)
+                {
+                    formOpShipping = (WhOperate.FormOpShipping)ftemp;
+                    break;
+                }
+            }
+            if (formOpShipping == null || formOpShipping.IsDisposed)
+            {
+                formOpShipping = new WhOperate.FormOpShipping();
+                formOpShipping.MdiParent = this;
+            }
+            formOpShipping.Show();
+            //formItemMaintain.WindowState = FormWindowState.Maximized;
+            formOpShipping.Activate();
         }
     }
 }

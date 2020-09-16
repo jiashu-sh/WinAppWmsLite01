@@ -34,6 +34,7 @@
             this.tsmiSubExit = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMainOperate = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiOpReceiving = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiOpShipping = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMainWhManagement = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiWmStockQuery = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMainLocationMgt = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,7 +43,6 @@
             this.tsmiItemMaintain = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMainHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiHelpAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiOpSending = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,7 +88,7 @@
             // 
             this.tsmiMainOperate.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiOpReceiving,
-            this.tsmiOpSending});
+            this.tsmiOpShipping});
             this.tsmiMainOperate.Name = "tsmiMainOperate";
             this.tsmiMainOperate.Size = new System.Drawing.Size(62, 21);
             this.tsmiMainOperate.Text = "操作(&O)";
@@ -99,6 +99,13 @@
             this.tsmiOpReceiving.Size = new System.Drawing.Size(180, 22);
             this.tsmiOpReceiving.Text = "入库(&R)";
             this.tsmiOpReceiving.Click += new System.EventHandler(this.tsmiOpReceiving_Click);
+            // 
+            // tsmiOpShipping
+            // 
+            this.tsmiOpShipping.Name = "tsmiOpShipping";
+            this.tsmiOpShipping.Size = new System.Drawing.Size(180, 22);
+            this.tsmiOpShipping.Text = "出库(&S)";
+            this.tsmiOpShipping.Click += new System.EventHandler(this.tsmiOpShipping_Click);
             // 
             // tsmiMainWhManagement
             // 
@@ -160,13 +167,6 @@
             this.tsmiHelpAbout.Text = "关于 (&A)";
             this.tsmiHelpAbout.Click += new System.EventHandler(this.tsmiHelpAbout_Click);
             // 
-            // tsmiOpSending
-            // 
-            this.tsmiOpSending.Name = "tsmiOpSending";
-            this.tsmiOpSending.Size = new System.Drawing.Size(180, 22);
-            this.tsmiOpSending.Text = "出库(S)";
-            this.tsmiOpSending.Click += new System.EventHandler(this.tsmiOpSending_Click);
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -203,7 +203,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiOpReceiving;
         private System.Windows.Forms.ToolStripMenuItem tsmiMainWhManagement;
         private System.Windows.Forms.ToolStripMenuItem tsmiWmStockQuery;
-        private System.Windows.Forms.ToolStripMenuItem tsmiOpSending;
+        private System.Windows.Forms.ToolStripMenuItem tsmiOpShipping;
     }
 }
 

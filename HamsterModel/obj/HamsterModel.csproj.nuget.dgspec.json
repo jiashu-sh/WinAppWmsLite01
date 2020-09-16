@@ -1,24 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\HamsterSoft\\WinAppWmsLite01\\HamsterModel\\HamsterModel.csproj": {}
+    "C:\\GitCode\\c-sharp\\WinAppWmsLite01\\HamsterModel\\HamsterModel.csproj": {}
   },
   "projects": {
-    "D:\\HamsterSoft\\WinAppWmsLite01\\HamsterModel\\HamsterModel.csproj": {
+    "C:\\GitCode\\c-sharp\\WinAppWmsLite01\\HamsterModel\\HamsterModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\HamsterSoft\\WinAppWmsLite01\\HamsterModel\\HamsterModel.csproj",
+        "projectUniqueName": "C:\\GitCode\\c-sharp\\WinAppWmsLite01\\HamsterModel\\HamsterModel.csproj",
         "projectName": "HamsterModel",
-        "projectPath": "D:\\HamsterSoft\\WinAppWmsLite01\\HamsterModel\\HamsterModel.csproj",
-        "packagesPath": "C:\\Users\\zhang\\.nuget\\packages\\",
-        "outputPath": "D:\\HamsterSoft\\WinAppWmsLite01\\HamsterModel\\obj\\",
+        "projectPath": "C:\\GitCode\\c-sharp\\WinAppWmsLite01\\HamsterModel\\HamsterModel.csproj",
+        "packagesPath": "C:\\Users\\jiashu\\.nuget\\packages\\",
+        "outputPath": "C:\\GitCode\\c-sharp\\WinAppWmsLite01\\HamsterModel\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\zhang\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\jiashu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -55,7 +56,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

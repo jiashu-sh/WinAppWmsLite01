@@ -33,6 +33,12 @@ namespace WinAppWmsLite.Common
             return iSerialNo;
         }
 
+        /// <summary>
+        /// 获取单据id
+        /// </summary>
+        /// <param name="sIdType"></param>
+        /// <param name="iIoType">1表示入库单，以8开始，0表示出库单，从1开始</param>
+        /// <returns></returns>
         internal static int GenOrderNo(string sIdType,int iIoType = 0)
         {
             int iProductNo = GenSystemNo(sIdType);
@@ -41,9 +47,11 @@ namespace WinAppWmsLite.Common
 
             int iIoPrefix = 1;
             if (iIoType == 0)
-                iIoType = 9;
+                iIoPrefix = 1;
+            else if (iIoType == 1)
+                iIoPrefix = 8;
 
-            iProductNo = iIoType * 10000000 + iProductNo; //必须为偶数
+            iProductNo = iIoPrefix * 10000000 + iProductNo; //必须为偶数
 
             return iProductNo;
         }
