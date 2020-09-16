@@ -137,5 +137,15 @@ namespace WinAppWmsLite
             //formItemMaintain.WindowState = FormWindowState.Maximized;
             formStockQuery.Activate();
         }
+
+        /// <summary>
+        /// 出库
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tsmiOpSending_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -171,6 +171,13 @@
     <Compile Include="WhOperate\FormOpReceiving.Designer.cs">
       <DependentUpon>FormOpReceiving.cs</DependentUpon>
     </Compile>
+    <Compile Include="WhOperate\FormOpSending.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WhOperate\FormOpSending.Designer.cs">
+      <DependentUpon>FormOpSending.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WhOperate\FormOpSendingCore\OpSendingCoreBase.cs" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WhOperate\FormOpReceiving.resx">
       <DependentUpon>FormOpReceiving.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WhOperate\FormOpSending.resx">
+      <DependentUpon>FormOpSending.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="db_file\wcs_local.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

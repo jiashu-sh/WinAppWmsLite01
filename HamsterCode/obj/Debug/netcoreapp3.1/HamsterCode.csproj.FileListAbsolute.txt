@@ -9,3 +9,5 @@ D:\HamsterSoft\WinAppWmsLite01\HamsterCode\bin\Debug\netcoreapp3.1\HamsterModel.
 D:\HamsterSoft\WinAppWmsLite01\HamsterCode\obj\Debug\netcoreapp3.1\HamsterCode.csproj.CopyComplete
 D:\HamsterSoft\WinAppWmsLite01\HamsterCode\obj\Debug\netcoreapp3.1\HamsterCode.dll
 D:\HamsterSoft\WinAppWmsLite01\HamsterCode\obj\Debug\netcoreapp3.1\HamsterCode.pdb
+D:\HamsterSoft\WinAppWmsLite01\HamsterCode\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\HamsterSoft\WinAppWmsLite01\HamsterCode\bin\Debug\netcoreapp3.1\Newtonsoft.Json.xml

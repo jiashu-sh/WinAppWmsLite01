@@ -1,8 +1,8 @@
 D:\HamsterSoft\WinAppWmsLite01\HamsterModel\bin\Debug\netcoreapp3.1\HamsterModel.deps.json
 D:\HamsterSoft\WinAppWmsLite01\HamsterModel\bin\Debug\netcoreapp3.1\HamsterModel.dll
 D:\HamsterSoft\WinAppWmsLite01\HamsterModel\bin\Debug\netcoreapp3.1\HamsterModel.pdb
-D:\HamsterSoft\WinAppWmsLite01\HamsterModel\obj\Debug\netcoreapp3.1\HamsterModel.csprojAssemblyReference.cache
 D:\HamsterSoft\WinAppWmsLite01\HamsterModel\obj\Debug\netcoreapp3.1\HamsterModel.AssemblyInfoInputs.cache
 D:\HamsterSoft\WinAppWmsLite01\HamsterModel\obj\Debug\netcoreapp3.1\HamsterModel.AssemblyInfo.cs
 D:\HamsterSoft\WinAppWmsLite01\HamsterModel\obj\Debug\netcoreapp3.1\HamsterModel.dll
 D:\HamsterSoft\WinAppWmsLite01\HamsterModel\obj\Debug\netcoreapp3.1\HamsterModel.pdb
+D:\HamsterSoft\WinAppWmsLite01\HamsterModel\obj\Debug\netcoreapp3.1\HamsterModel.csprojAssemblyReference.cache

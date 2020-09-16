@@ -40,7 +40,7 @@ namespace HamsterWebApi.Controllers
         [Route("CallBack")]
         public IActionResult CallBack()
         {
-            var CallBackStr = HelloWordCore.Instance.HelloWordVoid("HelloWord!!");
+            var CallBackStr = HelloWordCore.Instance.HelloWordVoid("Hamster CallBack!!");
             var result = Newtonsoft.Json.JsonConvert.SerializeObject(CallBackStr);
             //HttpResponseMessage response = new HttpResponseMessage
             //{

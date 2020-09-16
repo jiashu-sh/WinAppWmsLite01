@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GitCode\\c-sharp\\WinAppWmsLite01\\HamsterCode\\HamsterCode.csproj": {}
+    "D:\\HamsterSoft\\WinAppWmsLite01\\HamsterCode\\HamsterCode.csproj": {}
   },
   "projects": {
-    "C:\\GitCode\\c-sharp\\WinAppWmsLite01\\HamsterCode\\HamsterCode.csproj": {
+    "D:\\HamsterSoft\\WinAppWmsLite01\\HamsterCode\\HamsterCode.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GitCode\\c-sharp\\WinAppWmsLite01\\HamsterCode\\HamsterCode.csproj",
+        "projectUniqueName": "D:\\HamsterSoft\\WinAppWmsLite01\\HamsterCode\\HamsterCode.csproj",
         "projectName": "HamsterCode",
-        "projectPath": "C:\\GitCode\\c-sharp\\WinAppWmsLite01\\HamsterCode\\HamsterCode.csproj",
-        "packagesPath": "C:\\Users\\js\\.nuget\\packages\\",
-        "outputPath": "C:\\GitCode\\c-sharp\\WinAppWmsLite01\\HamsterCode\\obj\\",
+        "projectPath": "D:\\HamsterSoft\\WinAppWmsLite01\\HamsterCode\\HamsterCode.csproj",
+        "packagesPath": "C:\\Users\\zhang\\.nuget\\packages\\",
+        "outputPath": "D:\\HamsterSoft\\WinAppWmsLite01\\HamsterCode\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\js\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\zhang\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -27,8 +30,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\GitCode\\c-sharp\\WinAppWmsLite01\\HamsterModel\\HamsterModel.csproj": {
-                "projectPath": "C:\\GitCode\\c-sharp\\WinAppWmsLite01\\HamsterModel\\HamsterModel.csproj"
+              "D:\\HamsterSoft\\WinAppWmsLite01\\HamsterModel\\HamsterModel.csproj": {
+                "projectPath": "D:\\HamsterSoft\\WinAppWmsLite01\\HamsterModel\\HamsterModel.csproj"
               }
             }
           }
@@ -41,6 +44,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "System.Data.SQLite.Core": {
+              "target": "Package",
+              "version": "[1.0.113.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -56,21 +65,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\GitCode\\c-sharp\\WinAppWmsLite01\\HamsterModel\\HamsterModel.csproj": {
+    "D:\\HamsterSoft\\WinAppWmsLite01\\HamsterModel\\HamsterModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GitCode\\c-sharp\\WinAppWmsLite01\\HamsterModel\\HamsterModel.csproj",
+        "projectUniqueName": "D:\\HamsterSoft\\WinAppWmsLite01\\HamsterModel\\HamsterModel.csproj",
         "projectName": "HamsterModel",
-        "projectPath": "C:\\GitCode\\c-sharp\\WinAppWmsLite01\\HamsterModel\\HamsterModel.csproj",
-        "packagesPath": "C:\\Users\\js\\.nuget\\packages\\",
-        "outputPath": "C:\\GitCode\\c-sharp\\WinAppWmsLite01\\HamsterModel\\obj\\",
+        "projectPath": "D:\\HamsterSoft\\WinAppWmsLite01\\HamsterModel\\HamsterModel.csproj",
+        "packagesPath": "C:\\Users\\zhang\\.nuget\\packages\\",
+        "outputPath": "D:\\HamsterSoft\\WinAppWmsLite01\\HamsterModel\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\js\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\zhang\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -108,7 +120,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
