@@ -172,6 +172,7 @@
       <DependentUpon>FormOpReceiving.cs</DependentUpon>
     </Compile>
     <Compile Include="WhOperate\FormOpSendingCore\OpSendingCoreBase.cs" />
+    <Compile Include="WhOperate\FormOpSendingCore\OpShippingFactory.cs" />
     <Compile Include="WhOperate\FormOpShipping.cs">
       <SubType>Form</SubType>
     </Compile>
