@@ -43,3 +43,5 @@ C:\GitCode\c-sharp\WinAppWmsLite01\WinAppWcsClient01\obj\Debug\WinAppWmsLite.WhO
 C:\GitCode\c-sharp\WinAppWmsLite01\WinAppWcsClient01\obj\Debug\WinAppWmsLite01.exe
 C:\GitCode\c-sharp\WinAppWmsLite01\WinAppWcsClient01\obj\Debug\WinAppWmsLite01.pdb
 C:\GitCode\c-sharp\WinAppWmsLite01\WinAppWcsClient01\obj\Debug\WinAppWmsLite.WhMgt.FormStockQuery.resources
+C:\GitCode\c-sharp\WinAppWmsLite01\WinAppWcsClient01\obj\Debug\WinAppWmsLite01.csproj.CoreCompileInputs.cache
+C:\GitCode\c-sharp\WinAppWmsLite01\WinAppWcsClient01\obj\Debug\WinAppWmsLite.WhOperate.FormOpShipping.resources

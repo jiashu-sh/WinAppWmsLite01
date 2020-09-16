@@ -34,14 +34,15 @@
             this.tsmiSubExit = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMainOperate = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiOpReceiving = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiOpShipping = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiMainWhManagement = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiWmStockQuery = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMainLocationMgt = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiLocationMapSet = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMainItemMgt = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiItemMaintain = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMainHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiHelpAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiMainWhManagement = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiWmStockQuery = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,7 +87,8 @@
             // tsmiMainOperate
             // 
             this.tsmiMainOperate.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiOpReceiving});
+            this.tsmiOpReceiving,
+            this.tsmiOpShipping});
             this.tsmiMainOperate.Name = "tsmiMainOperate";
             this.tsmiMainOperate.Size = new System.Drawing.Size(62, 21);
             this.tsmiMainOperate.Text = "操作(&O)";
@@ -97,6 +99,28 @@
             this.tsmiOpReceiving.Size = new System.Drawing.Size(180, 22);
             this.tsmiOpReceiving.Text = "入库(&R)";
             this.tsmiOpReceiving.Click += new System.EventHandler(this.tsmiOpReceiving_Click);
+            // 
+            // tsmiOpShipping
+            // 
+            this.tsmiOpShipping.Name = "tsmiOpShipping";
+            this.tsmiOpShipping.Size = new System.Drawing.Size(180, 22);
+            this.tsmiOpShipping.Text = "出库(&S)";
+            this.tsmiOpShipping.Click += new System.EventHandler(this.tsmiOpShipping_Click);
+            // 
+            // tsmiMainWhManagement
+            // 
+            this.tsmiMainWhManagement.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiWmStockQuery});
+            this.tsmiMainWhManagement.Name = "tsmiMainWhManagement";
+            this.tsmiMainWhManagement.Size = new System.Drawing.Size(64, 21);
+            this.tsmiMainWhManagement.Text = "管理(&M)";
+            // 
+            // tsmiWmStockQuery
+            // 
+            this.tsmiWmStockQuery.Name = "tsmiWmStockQuery";
+            this.tsmiWmStockQuery.Size = new System.Drawing.Size(180, 22);
+            this.tsmiWmStockQuery.Text = "库存查询";
+            this.tsmiWmStockQuery.Click += new System.EventHandler(this.tsmiWmStockQuery_Click);
             // 
             // tsmiMainLocationMgt
             // 
@@ -109,7 +133,7 @@
             // tsmiLocationMapSet
             // 
             this.tsmiLocationMapSet.Name = "tsmiLocationMapSet";
-            this.tsmiLocationMapSet.Size = new System.Drawing.Size(180, 22);
+            this.tsmiLocationMapSet.Size = new System.Drawing.Size(160, 22);
             this.tsmiLocationMapSet.Text = "库位平面图设置";
             this.tsmiLocationMapSet.Click += new System.EventHandler(this.tsmiLocationMapSet_Click);
             // 
@@ -139,24 +163,9 @@
             // tsmiHelpAbout
             // 
             this.tsmiHelpAbout.Name = "tsmiHelpAbout";
-            this.tsmiHelpAbout.Size = new System.Drawing.Size(180, 22);
+            this.tsmiHelpAbout.Size = new System.Drawing.Size(120, 22);
             this.tsmiHelpAbout.Text = "关于 (&A)";
             this.tsmiHelpAbout.Click += new System.EventHandler(this.tsmiHelpAbout_Click);
-            // 
-            // tsmiMainWhManagement
-            // 
-            this.tsmiMainWhManagement.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiWmStockQuery});
-            this.tsmiMainWhManagement.Name = "tsmiMainWhManagement";
-            this.tsmiMainWhManagement.Size = new System.Drawing.Size(64, 21);
-            this.tsmiMainWhManagement.Text = "管理(&M)";
-            // 
-            // tsmiWmStockQuery
-            // 
-            this.tsmiWmStockQuery.Name = "tsmiWmStockQuery";
-            this.tsmiWmStockQuery.Size = new System.Drawing.Size(180, 22);
-            this.tsmiWmStockQuery.Text = "库存查询";
-            this.tsmiWmStockQuery.Click += new System.EventHandler(this.tsmiWmStockQuery_Click);
             // 
             // FormMain
             // 
@@ -194,6 +203,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiOpReceiving;
         private System.Windows.Forms.ToolStripMenuItem tsmiMainWhManagement;
         private System.Windows.Forms.ToolStripMenuItem tsmiWmStockQuery;
+        private System.Windows.Forms.ToolStripMenuItem tsmiOpShipping;
     }
 }
 
