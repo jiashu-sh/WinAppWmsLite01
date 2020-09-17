@@ -102,6 +102,7 @@
     <Compile Include="Common\Ean13.cs" />
     <Compile Include="Common\EnumDbTypes.cs" />
     <Compile Include="Common\EnumIoTypes.cs" />
+    <Compile Include="Common\WMSClientCommon.cs" />
     <Compile Include="EntitiesRbt\EntityRbtUnit.cs" />
     <Compile Include="Entities\EntityIoLogs.cs" />
     <Compile Include="Entities\EntityItem.cs" />
