@@ -94,3 +94,12 @@ D:\HamsterSoft\WinAppWmsLite01\HamsterWebApi\bin\Debug\netcoreapp3.1\HamsterCode
 D:\HamsterSoft\WinAppWmsLite01\HamsterWebApi\bin\Debug\netcoreapp3.1\HamsterModel.dll
 D:\HamsterSoft\WinAppWmsLite01\HamsterWebApi\bin\Debug\netcoreapp3.1\HamsterCode.pdb
 D:\HamsterSoft\WinAppWmsLite01\HamsterWebApi\bin\Debug\netcoreapp3.1\HamsterModel.pdb
+D:\HamsterSoft\WinAppWmsLite01\HamsterWebApi\bin\Debug\netcoreapp3.1\System.Data.SQLite.dll
+D:\HamsterSoft\WinAppWmsLite01\HamsterWebApi\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\netstandard2.0\SQLite.Interop.dll
+D:\HamsterSoft\WinAppWmsLite01\HamsterWebApi\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\netstandard2.1\SQLite.Interop.dll
+D:\HamsterSoft\WinAppWmsLite01\HamsterWebApi\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\netstandard2.0\SQLite.Interop.dll
+D:\HamsterSoft\WinAppWmsLite01\HamsterWebApi\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\netstandard2.1\SQLite.Interop.dll
+D:\HamsterSoft\WinAppWmsLite01\HamsterWebApi\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\netstandard2.0\SQLite.Interop.dll
+D:\HamsterSoft\WinAppWmsLite01\HamsterWebApi\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\netstandard2.1\SQLite.Interop.dll
+D:\HamsterSoft\WinAppWmsLite01\HamsterWebApi\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\netstandard2.0\SQLite.Interop.dll
+D:\HamsterSoft\WinAppWmsLite01\HamsterWebApi\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\netstandard2.1\SQLite.Interop.dll

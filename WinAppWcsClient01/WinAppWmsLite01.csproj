@@ -102,6 +102,7 @@
     <Compile Include="Common\Ean13.cs" />
     <Compile Include="Common\EnumDbTypes.cs" />
     <Compile Include="Common\EnumIoTypes.cs" />
+    <Compile Include="Common\WMSClientCommon.cs" />
     <Compile Include="EntitiesRbt\EntityRbtUnit.cs" />
     <Compile Include="Entities\EntityIoLogs.cs" />
     <Compile Include="Entities\EntityItem.cs" />
@@ -172,6 +173,8 @@
     <Compile Include="WhOperate\FormOpReceiving.Designer.cs">
       <DependentUpon>FormOpReceiving.cs</DependentUpon>
     </Compile>
+    <Compile Include="WhOperate\FormOpSendingCore\OpSendingCoreBase.cs" />
+    <Compile Include="WhOperate\FormOpSendingCore\OpShippingFactory.cs" />
     <Compile Include="WhOperate\FormOpShipping.cs">
       <SubType>Form</SubType>
     </Compile>
