@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinAppWmsLite.Ai;
+using WinAppWmsLite.Entities;
 
 namespace WinAppWmsLite.LocationMgt
 {
@@ -47,6 +48,12 @@ namespace WinAppWmsLite.LocationMgt
         private static EntityLocationCell cStart = new EntityLocationCell();
         private static EntityLocationCell cEnd = new EntityLocationCell();
         private static List<EntityLocationCell> lstPathFind = new List<EntityLocationCell>();
+
+        //
+        private static Point DefaultPoint = new Point(0, 0);
+        private static List<Panel> pnlList = new List<Panel>();
+        private bool bEnableConfiguration = true;
+        private static List<EntityMapViewArea> ListMapViewAreas = new List<EntityMapViewArea>();
 
         public FormLocationMapSet()
         {
@@ -374,6 +381,7 @@ namespace WinAppWmsLite.LocationMgt
                             ABCClass = "D";
                         CartonBrush2 = MapProperty.SetAbcClassBrushColor(ABCClass);
                     }
+                    /*
                     else if ((cbRunStatistics.Checked) && (DS_WAREHOUSE_LAYOUT.Tables.Contains(TABLE_LOC_STATISTICS)))
                     {
                         //查找是否有分析结果
@@ -388,6 +396,7 @@ namespace WinAppWmsLite.LocationMgt
                             }
                         }
                     }
+                    */
                     else
                     {
                         //查找是否有库存
@@ -1161,5 +1170,246 @@ namespace WinAppWmsLite.LocationMgt
 
             return bSendRbtCommand;
         }
+
+        private void btnAddNew_Click(object sender, EventArgs e)
+        {
+            /*
+            string pnlName = "pnlArea";
+            pnlName += "_" + (DefaultPoint.X / 50).ToString();
+            DefaultPoint.X = DEFAULT_GRID_SIZE * (pnlList.Count) + 2;
+            DefaultPoint.Y = DEFAULT_GRID_SIZE * (pnlList.Count) + 2;
+
+            Point pLocation = new Point(DefaultPoint.X, DefaultPoint.Y);
+            NewDevice(pLocation, pnlName, "");
+            */
+
+            EntityMapViewArea AreaEntity = new EntityMapViewArea();
+            AreaEntity.AreaId = "A1";
+            AreaEntity.AreaNo = "A1";
+            AreaEntity.x = 2;
+            AreaEntity.y = 2;
+            NewDevice(AreaEntity);
+
+            ListMapViewAreas.Add(AreaEntity);
+        }
+
+        private void NewDevice(Point point, string pnlName, string pnlTag)
+        {
+            /*
+            int GridSize = DEFAULT_GRID_SIZE - 3;
+            //实例化
+            Panel pnl = new Panel();
+
+            //设置属性
+            pnl.Location = point;
+            pnl.Size = new Size(GridSize, GridSize);
+            pnl.BackColor = Color.LightGreen;
+            pnl.BackColor = Color.FromArgb(65, 0xFF, 0x00, 0x00);
+            pnl.Name = pnlName;
+            pnl.Tag = pnlTag;
+
+            pnl.Click += pnl_Click;
+            pnl.MouseDown += pnl_MouseDown;
+            pnl.MouseMove += pnl_MouseMove;
+            pnl.MouseUp += pnl_MouseUp;
+
+            //添加到窗口的Controls集合中
+            //this.Controls.Add(pnl);
+            pnlMain.Controls.Add(pnl);
+
+            pnlList.Add(pnl);
+            */
+
+
+        }
+
+        private void NewDevice(EntityMapViewArea AreaEntity)
+        {
+            int GridSize = DEFAULT_GRID_SIZE - 3;
+            //实例化
+            Panel pnl = new Panel();
+
+            //设置属性
+            pnl.Location = new Point(AreaEntity.x, AreaEntity.y);
+            pnl.Size = new Size(GridSize, GridSize);
+            pnl.BackColor = Color.LightGreen;
+            pnl.BackColor = Color.FromArgb(65, 0xFF, 0x00, 0x00);
+            pnl.Name = "pnl" + AreaEntity.AreaId.ToString();
+            pnl.Tag = AreaEntity.AreaId.ToString();
+
+            /*
+            switch (deviceConfiguration.ctl_code)
+            {
+                case "b":
+                    pnl.BackColor = Color.FromArgb(65, 0x00, 0xFF, 0x00);
+                    break;
+                case "d":
+                    pnl.BackColor = Color.FromArgb(0x90, 0x00, 0xFF, 0x00);
+                    break;
+                case "c":
+                    pnl.BackColor = Color.FromArgb(65, 0xFF, 0x00, 0x00);
+                    break;
+                case "f":
+                    pnl.BackColor = Color.FromArgb(65, 0xFF, 0xFF, 0x00);
+                    break;
+                case "i":
+                    pnl.BackColor = Color.FromArgb(65, 0xCD, 0x85, 0x00);
+                    break;
+                default:
+                    pnl.BackColor = Color.FromArgb(65, 0xC7, 0xC7, 0xC7);
+
+                    break;
+            }
+            */
+
+            pnl.Click += pnl_Click;
+            pnl.MouseDown += pnl_MouseDown;
+            pnl.MouseMove += pnl_MouseMove;
+            pnl.MouseUp += pnl_MouseUp;
+
+            //添加到窗口的Controls集合中
+            //this.Controls.Add(pnl);
+            pnlMain.Controls.Add(pnl);
+
+            //-------------------------------------------
+            Label lbBtnInfo = new System.Windows.Forms.Label();
+            lbBtnInfo.AutoSize = true;
+            lbBtnInfo.BackColor = System.Drawing.Color.Transparent;
+            lbBtnInfo.Font = new System.Drawing.Font("微软雅黑", 7.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            lbBtnInfo.ForeColor = System.Drawing.Color.Gray;
+            lbBtnInfo.Location = new System.Drawing.Point(5, 5);
+            lbBtnInfo.Name = "lbBtnInfo" + AreaEntity.AreaId;
+            lbBtnInfo.Size = new System.Drawing.Size(73, 17);
+            lbBtnInfo.TabIndex = 0;
+            lbBtnInfo.Text = AreaEntity.AreaNo;
+            pnl.Controls.Add(lbBtnInfo);
+            //-------------------------------------------
+
+            pnlList.Add(pnl);
+        }
+
+        void pnl_Click(object sender, EventArgs e)
+        {
+            //不允许设置时，（即在运行状态时可以点击响应），此时不能拖动
+            if (bEnableConfiguration)
+                return;
+
+            Panel pnl = (Panel)sender;
+            string pnlId = pnl.Tag.ToString();
+            /*
+            EntityDeviceConfiguration device = GetDevice(pnlId);
+            lbDeviceMac.Text = device.device_mac;
+
+            if (device.ctl_code == "c")
+            {
+                string msg = "是否确定开始响应 " + device.device_no + " 号设备呼叫? \n\r (" + device.device_mac + ")";
+
+                if (DialogResult.No == MessageBox.Show(msg, "确认响应", MessageBoxButtons.YesNo))
+                    return;
+
+                string Url = URL_DEFAULT + "delivery/" + device.device_mac;
+                string pageValue = HttpGetUrl(Url);
+                tsslMessage.Text = pageValue;
+            }
+            */
+        }
+
+        //panel位置
+        Point pt;
+
+        private void pnl_MouseDown(object sender, MouseEventArgs e)
+        {
+            Panel pnl = (Panel)sender;
+            string pnlId = pnl.Tag.ToString();
+            EntityMapViewArea mvArea = GetArea(pnlId);
+            lbSelAreaNo.Text = mvArea.AreaNo;
+            pt = Cursor.Position;
+        }
+
+        private void pnl_MouseMove(object sender, MouseEventArgs e)
+        {
+            //允许设置时，打开拖动功能，!bEnableConfiguration时退出
+            if (!bEnableConfiguration)
+                return;
+
+            Panel pnl = (Panel)sender;
+
+            if (e.Button == MouseButtons.Left)
+            {
+                int px = Cursor.Position.X - pt.X;
+                int py = Cursor.Position.Y - pt.Y;
+
+                pnl.Location = new Point(pnl.Location.X + px, pnl.Location.Y + py);
+
+                pt = Cursor.Position;
+            }
+
+        }
+
+        private void pnl_MouseUp(object sender, MouseEventArgs e)
+        {
+            //允许设置时，打开保存设置位置功能，!bEnableConfiguration时退出
+            if (!bEnableConfiguration)
+                return;
+
+            //MouseUp时保存位置
+            Panel pnl = (Panel)sender;
+
+            //纠正位置，通过去掉 对10取余数的位数完成
+            int nX = pnl.Location.X;
+            int nY = pnl.Location.Y;
+            if ((pnl.Location.X % 10) != 2)
+                nX = pnl.Location.X - (pnl.Location.X % 10) + 2;
+            if ((pnl.Location.Y % 10) != 2)
+                nY = pnl.Location.Y - (pnl.Location.Y % 10) + 2;
+
+            pnl.Location = new Point(nX, nY);
+            Point pNewLocation = new Point(nX, nY);
+            pt = Cursor.Position;
+
+            string pnlId = pnl.Tag.ToString();
+            /*
+            EntityDeviceConfiguration device = GetDevice(pnlId);
+            */
+            EntityMapViewArea mvArea = GetArea(pnlId);
+            if ((Math.Abs(mvArea.x - nX) > 10) || (Math.Abs(mvArea.y - nY) > 10)) //移动超过10像素保存
+            {
+                /*
+                //保存设置位置，不超过10像素的移动不保存
+                if (SetDeviceConfiguration(device, pNewLocation))
+                    tsslMessage.Text = "moving saved.";
+                else
+                    tsslMessage.Text = "saving failure.";
+                */
+            }
+
+            //更新配置信息
+            for (int i = 0; i < ListMapViewAreas.Count; i++)
+            {
+                if (ListMapViewAreas[i].AreaId == (pnlId))
+                {
+                    ListMapViewAreas[i].x = pt.X;
+                    ListMapViewAreas[i].y = pt.Y;
+                    break;
+                }
+            }
+        }
+
+        private EntityMapViewArea GetArea(string AreaId)
+        {
+            EntityMapViewArea areaEntity = null;
+
+            foreach (EntityMapViewArea area in ListMapViewAreas)
+            {
+                if (area.AreaId == AreaId)
+                {
+                    areaEntity = area;
+                    break;
+                }
+            }
+
+            return areaEntity;
+        }
+
     }
 }

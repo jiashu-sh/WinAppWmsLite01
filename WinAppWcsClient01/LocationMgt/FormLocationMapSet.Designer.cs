@@ -32,7 +32,6 @@
             this.pnlInput = new System.Windows.Forms.Panel();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.pnlAreaSel = new System.Windows.Forms.Panel();
-            this.cbRunStatistics = new System.Windows.Forms.CheckBox();
             this.cbViewABCClass = new System.Windows.Forms.CheckBox();
             this.cbViewPickingPRI = new System.Windows.Forms.CheckBox();
             this.lbAreaGroupNo = new System.Windows.Forms.Label();
@@ -71,6 +70,8 @@
             this.tsmiStartWayfinding = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiSendCommand = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAddNew = new System.Windows.Forms.Button();
+            this.lbSelAreaNo = new System.Windows.Forms.Label();
             this.pnlInput.SuspendLayout();
             this.pnlAreaSel.SuspendLayout();
             this.pnlSettingLock.SuspendLayout();
@@ -106,7 +107,8 @@
             // 
             // pnlAreaSel
             // 
-            this.pnlAreaSel.Controls.Add(this.cbRunStatistics);
+            this.pnlAreaSel.Controls.Add(this.lbSelAreaNo);
+            this.pnlAreaSel.Controls.Add(this.btnAddNew);
             this.pnlAreaSel.Controls.Add(this.cbViewABCClass);
             this.pnlAreaSel.Controls.Add(this.cbViewPickingPRI);
             this.pnlAreaSel.Controls.Add(this.lbAreaGroupNo);
@@ -114,23 +116,13 @@
             this.pnlAreaSel.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlAreaSel.Location = new System.Drawing.Point(150, 0);
             this.pnlAreaSel.Name = "pnlAreaSel";
-            this.pnlAreaSel.Size = new System.Drawing.Size(549, 40);
+            this.pnlAreaSel.Size = new System.Drawing.Size(579, 40);
             this.pnlAreaSel.TabIndex = 3;
-            // 
-            // cbRunStatistics
-            // 
-            this.cbRunStatistics.AutoSize = true;
-            this.cbRunStatistics.Location = new System.Drawing.Point(441, 9);
-            this.cbRunStatistics.Name = "cbRunStatistics";
-            this.cbRunStatistics.Size = new System.Drawing.Size(99, 21);
-            this.cbRunStatistics.TabIndex = 2;
-            this.cbRunStatistics.Text = "查看库存分析";
-            this.cbRunStatistics.UseVisualStyleBackColor = true;
             // 
             // cbViewABCClass
             // 
             this.cbViewABCClass.AutoSize = true;
-            this.cbViewABCClass.Location = new System.Drawing.Point(336, 9);
+            this.cbViewABCClass.Location = new System.Drawing.Point(310, 9);
             this.cbViewABCClass.Name = "cbViewABCClass";
             this.cbViewABCClass.Size = new System.Drawing.Size(99, 21);
             this.cbViewABCClass.TabIndex = 2;
@@ -140,7 +132,7 @@
             // cbViewPickingPRI
             // 
             this.cbViewPickingPRI.AutoSize = true;
-            this.cbViewPickingPRI.Location = new System.Drawing.Point(219, 9);
+            this.cbViewPickingPRI.Location = new System.Drawing.Point(193, 9);
             this.cbViewPickingPRI.Name = "cbViewPickingPRI";
             this.cbViewPickingPRI.Size = new System.Drawing.Size(111, 21);
             this.cbViewPickingPRI.TabIndex = 2;
@@ -150,7 +142,7 @@
             // lbAreaGroupNo
             // 
             this.lbAreaGroupNo.AutoSize = true;
-            this.lbAreaGroupNo.Location = new System.Drawing.Point(16, 11);
+            this.lbAreaGroupNo.Location = new System.Drawing.Point(8, 11);
             this.lbAreaGroupNo.Name = "lbAreaGroupNo";
             this.lbAreaGroupNo.Size = new System.Drawing.Size(44, 17);
             this.lbAreaGroupNo.TabIndex = 1;
@@ -159,7 +151,7 @@
             // cbAreaGroupNo
             // 
             this.cbAreaGroupNo.FormattingEnabled = true;
-            this.cbAreaGroupNo.Location = new System.Drawing.Point(66, 7);
+            this.cbAreaGroupNo.Location = new System.Drawing.Point(54, 7);
             this.cbAreaGroupNo.Name = "cbAreaGroupNo";
             this.cbAreaGroupNo.Size = new System.Drawing.Size(130, 25);
             this.cbAreaGroupNo.TabIndex = 0;
@@ -491,6 +483,27 @@
             this.tsmiSendCommand.Text = "发送任务";
             this.tsmiSendCommand.Click += new System.EventHandler(this.tsmiSendCommand_Click);
             // 
+            // btnAddNew
+            // 
+            this.btnAddNew.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnAddNew.Location = new System.Drawing.Point(539, 0);
+            this.btnAddNew.Name = "btnAddNew";
+            this.btnAddNew.Size = new System.Drawing.Size(40, 40);
+            this.btnAddNew.TabIndex = 3;
+            this.btnAddNew.Text = " + ";
+            this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
+            // 
+            // lbSelAreaNo
+            // 
+            this.lbSelAreaNo.AutoSize = true;
+            this.lbSelAreaNo.ForeColor = System.Drawing.Color.Green;
+            this.lbSelAreaNo.Location = new System.Drawing.Point(452, 12);
+            this.lbSelAreaNo.Name = "lbSelAreaNo";
+            this.lbSelAreaNo.Size = new System.Drawing.Size(70, 17);
+            this.lbSelAreaNo.TabIndex = 4;
+            this.lbSelAreaNo.Text = "SelAreaNo";
+            // 
             // FormLocationMapSet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -549,7 +562,6 @@
         private System.Windows.Forms.CheckBox cbShowGrid;
         private System.Windows.Forms.CheckBox cbViewPickingPRI;
         private System.Windows.Forms.CheckBox cbViewABCClass;
-        private System.Windows.Forms.CheckBox cbRunStatistics;
         private System.Windows.Forms.Label lbGridYVal;
         private System.Windows.Forms.Label lbGridY;
         private System.Windows.Forms.Label lbGridXVal;
@@ -565,5 +577,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem tsmiSendCommand;
         private System.Windows.Forms.Label lbSelectedUnitMacAddress;
+        private System.Windows.Forms.Button btnAddNew;
+        private System.Windows.Forms.Label lbSelAreaNo;
     }
 }

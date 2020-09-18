@@ -109,6 +109,7 @@
     <Compile Include="Entities\EntityLocation.cs" />
     <Compile Include="Entities\EntityLocLane.cs" />
     <Compile Include="Entities\EntityLocShelf.cs" />
+    <Compile Include="Entities\EntityMapViewArea.cs" />
     <Compile Include="Entities\EntityOrder.cs" />
     <Compile Include="Entities\EntityParaItemQuery.cs" />
     <Compile Include="FormMain.cs">
